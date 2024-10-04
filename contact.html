@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Howard Portney - Web Developer Portfolio">
+    <meta name="keywords" content="Web Developer, HTML, CSS, JavaScript, PHP, Portfolio">
+    <title>Howard Portney - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #message {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            display: none; /* Initially hide the message */
+        }
+        /* Styles for success message */
+        #message.success {
+            background-color: #000000; /* Background color for success */
+        }
+        /* Styles for error message */
+        #message.error {
+            background-color: #ff0000; /* Background color for error */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Howard Portney</h1>
+        <h2>Web Developer</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to <a href="mailto:howard_portney@yahoo.com">email me</a> for more information or to discuss a project. Alternatively, you can fill out the form below:</p>
+
+            <!-- Contact Form -->
+            <form action="https://www.hollywoodhow.com/send_mail.php" method="POST">
+                <!-- Message Display -->
+                <div id="message"></div>
+            
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name..." required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email Address..." 
+                       pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" 
+                       title="Please enter a valid email address (e.g., user@domain.com)." required>
+                
+                <label for="messageText">Message:</label>
+                <textarea id="messageText" name="message" rows="5" placeholder="Please include a message..." required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>            
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Howard Portney.&nbsp; All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('input, textarea').forEach(function(element) {
+          element.addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+              this.classList.add('invalid');
+            } else {
+              this.classList.remove('invalid');
+            }
+          });
+      
+          element.addEventListener('focus', function() {
+            this.classList.remove('invalid');
+          });
+        });
+    </script>
+      
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+    
+        // Check for status in the URL
+        const status = getQueryParam('status');
+        const messageDiv = document.getElementById('message');
+    
+        // Show the message div based on the status
+        if (status === 'success') {
+            messageDiv.innerHTML = "Thank you!&nbsp; Your message has been sent successfully.";
+            messageDiv.className = "success"; // Add success class
+        } else if (status === 'error') {
+            messageDiv.innerHTML = "Sorry, there was an error sending your message.&nbsp; Please try again.";
+            messageDiv.className = "error"; // Add error class
+        }
+    
+        // Show the message div
+        messageDiv.style.display = "block"; // Ensure it stays visible
+    </script>    
+
+</body>
+</html>
