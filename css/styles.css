@@ -26,15 +26,16 @@ body {
 }
 
 body a:not(header nav ul li a):not(.thumbnail-gallery a) {
-  color: #a9d3e8;
+  color: #B6E2B6;
   font-size: 2.2rem;
   font-variant: small-caps;
   position: relative;
   text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 body a:not(header nav ul li a):not(.thumbnail-gallery a)::after {
-  background: #a9d3e8;
+  background: #B6E2B6;
   bottom: -1px;
   content: '';
   display: block;
@@ -91,7 +92,6 @@ header nav ul li {
 
 header nav ul li a {
   background-color: #5D7D91; 
-  /* border: 2px solid #5D7D91; */
   border-radius: 10px; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   color: #FFFFFF; 
@@ -102,19 +102,17 @@ header nav ul li a {
   padding: 7px 8px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; 
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
 }
 
 header nav ul li a:hover,
 header nav ul li a:focus {
   background-color: #a9d3e8;
-  /* border-color: #5D7D91;  */
   color: #425968; 
 }
 
 header nav ul li a.active {
   background-color: #a9d3e8; 
-  /* border-color: #a9d3e8;  */
   border-radius: 10px; 
   color: #425968; 
 }
@@ -129,11 +127,8 @@ header nav ul li a.active {
 /* START SECTION STYLES */
 section {
   background-color: #5D7D91;
-  /* border-bottom: #a9d3e8 solid 1px; */
   border-radius: 8px;
-  /* border-right: #a9d3e8 solid 1px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  
   color: #FFFFFF;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 20px 0;
@@ -187,7 +182,7 @@ section p strong  {
 }
 
 .thumbnail-gallery figure {
-  margin: 0; /* Reset margin to avoid extra spacing */
+  margin: 0; 
   overflow: visible; /* Allow image to overflow the container */
   position: relative; /* Position for the figcaption */
   text-align: center; 
@@ -221,7 +216,7 @@ section p strong  {
   pointer-events: none; /* Ensure figcaption does not interfere with hover effect on the image */
   position: absolute; /* Overlay position */
   right: 0;
-  text-align: center; /* Center text inside the caption */
+  text-align: center; 
   top: 50%; /* Center vertically */
   transform: translateY(-50%); /* Center vertically within the container */
   transition: opacity 0.3s ease; /* Smooth transition for overlay */
@@ -243,9 +238,9 @@ section p strong  {
 
 /* Call to Action */
 #cta {
+  background-color: #5D7D91;
   font-size: 1.8rem;
   line-height: 1.8;
-  background-color: #5D7D91;
 }
 
 #cta p {
@@ -260,46 +255,45 @@ form {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
   gap: 2rem; /* Space between form elements */
-  max-width: 600px; /* Set a max-width for the form */
-  margin: 0 auto; /* Center the form horizontally */
+  margin: 0 auto; 
+  max-width: 600px; 
+  padding: 20px;
 }
 
 /* Form Labels */
 form label {
   font-size: 1.8rem; /* Match the font size with body text */
-  color: #a9d3e8; /* Label color to match the theme */
+  color: #a9d3e8; 
   margin-bottom: 0.1rem; /* Significantly reduced space between label and input */
   display: block; /* Ensure labels are block elements */
 }
 
-/* Form Inputs, Textareas, and Selects */
+/* Form Inputs and Textareas */
 form input,
-form textarea,
-form select {
-  font-size: 1.8rem; /* Match the font size with body text */
-  padding: 0.8rem; /* Padding for better alignment */
-  border: 2px solid #425968; /* Match border color with your design */
-  border-radius: 8px; /* Match section border-radius */
-  background-color: #ffffff; /* White background for inputs */
-  color: #333; /* Text color for readability */
-  width: 100%; /* Make inputs and textarea fill the form width */
-  box-sizing: border-box; /* Include padding in width calculation */
-  margin-top: -2.2rem; /* Negative margin to pull the input fields closer to the label */
+form textarea {
+    background-color: #ffffff;
+    border: 2px solid #425968;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 1.8rem; /* Match the font size with body text */
+    margin-top: -2.2rem; /* Negative margin to pull the input fields closer to the label */
+    padding: 0.8rem;
+    width: 100%;
 }
 
 /* Ensure consistent appearance for textareas */
 form textarea {
-  resize: vertical; /* Allow vertical resizing */
-  min-height: 150px; /* Minimum height for better usability */
+  min-height: 150px; 
   outline: 3px solid transparent; /* Start with no visible outline */
+  resize: vertical; /* Allow vertical resizing */
 }
 
 /* Input Fields */
 input {
+  height: 5.5rem; 
   outline: 3px solid transparent; /* Start with no visible outline */
-  height: 5.5rem; /* Set a consistent height for input fields */
 }
 
 /* Valid and Invalid States for Inputs */
@@ -352,7 +346,6 @@ textarea:invalid:not(:placeholder-shown):focus {
   outline-color: var(--clr-error); /* Show error outline when invalid after losing focus */
 }
 
-/* Add this to your existing CSS */
 input.invalid,
 textarea.invalid {
   outline-color: var(--clr-error); /* Red outline for invalid state */
@@ -361,27 +354,27 @@ textarea.invalid {
 /* Submit Button Styling */
 form button {
   background-color: #425968; /* Darker blue background */
+  border: 2px solid #5D7D91; 
+  border-radius: 10px; 
   color: #a9d3e8; /* Text color */
+  cursor: pointer;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.8rem; 
   font-weight: bold;
-  padding: 0.75rem; /* Adjust padding to control button height */
-  border: 2px solid #5D7D91; 
-  border-radius: 10px; 
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  width: 100%; 
-  text-align: center; 
-  margin-top: 1.5rem; 
   height: 5.5rem; /* Set a consistent height for the button */
+  margin-top: 1.5rem; 
+  padding: 0.75rem; /* Adjust padding to control button height */
+  text-align: center; 
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  width: 100%; 
 }
 
 /* Button Hover State */
 form button:hover,
 form button:focus {
   background-color: #5D7D91; 
-  color: #FFFFFF; 
   border-color: #a9d3e8; 
+  color: #FFFFFF; 
 }
 
 /* Ensure button is accessible */
@@ -397,11 +390,11 @@ form button:focus {
 }
 
 #message {
+  border-radius: 5px; 
+  color: white; 
+  display: block; 
   margin-bottom: 20px; /* Space between the message and the form */
-  padding: 10px; /* Add some padding */
-  border-radius: 5px; /* Rounded corners */
-  color: white; /* Text color */
-  display: block; /* Ensure it can be displayed */
+  padding: 10px; 
   text-align: center;
 }
 
@@ -420,20 +413,19 @@ form button:focus {
 
 /* Footer styles */
 footer {
-  background-color: #425968;
-  background: rgb(66,89,104);
-  background: -moz-linear-gradient(90deg, rgba(66,89,104,1) 56%, rgba(169,211,232,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(66,89,104,1) 56%, rgba(169,211,232,1) 100%);
-  background: linear-gradient(45deg, rgba(66,89,104,1) 56%, rgba(169,211,232,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#425968",endColorstr="#a9d3e8",GradientType=1);
+  background: rgb(66, 89, 104);
+  background: -moz-linear-gradient(90deg, rgba(66, 89, 104, 1) 56%, rgba(169, 211, 232, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(66, 89, 104, 1) 56%, rgba(169, 211, 232, 1) 100%);
+  background: linear-gradient(45deg, rgba(66, 89, 104, 1) 56%, rgba(169, 211, 232, 1) 100%);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   color: #e0e0e0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#425968",endColorstr="#a9d3e8",GradientType=1);
+  font-size: 0.9em; /* Slightly smaller for footer */
   font-variant: small-caps;
   margin-bottom: 20px;
   padding: 10px;
   text-align: center;
-  font-size: 0.9em; /* Slightly smaller for footer */
 }
 
 /* For large screens */
