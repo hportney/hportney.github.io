@@ -87,6 +87,9 @@
 // Prompt the user for their name on page load
 let userName = prompt("Welcome! Please enter your name to personalize your stats!") || "Guest";
 
+// Remove any leading or trailing spaces from the name
+userName = userName.trim();
+
 // Update the welcome message and stats with the user's name
 document.getElementById("user-name").textContent = userName;
 
