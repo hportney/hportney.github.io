@@ -160,7 +160,7 @@ section p strong  {
 }
 
 section ul{
-  margin: -10px 0 20px 15px;
+  margin: -10px 0 20px 25px;
 }
 /* END SECTION STYLES */
 
@@ -337,6 +337,16 @@ button:disabled {
     color: #F5E6AC; 
 }
 /* END COIN FLIP PORTFOLIO PAGE */
+
+/* START RANDOM QUOTE GENERATOR PORTFOLIO PAGE */
+#quote {
+  color: #F5E6AC;
+}
+#newQuoteButton {
+  margin-bottom: 20px;
+  width: 220px;
+}
+/* END RANDOM QUOTE GENERATOR PORTFOLIO PAGE */
 
 /* Call to Action */
 #cta {
@@ -553,5 +563,8 @@ footer {
 
   section h2 {
     font-size: 3rem; 
+  }
+  section ul{
+    margin: -10px 0 20px 15px;
   }
 }
