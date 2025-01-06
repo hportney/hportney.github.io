@@ -152,7 +152,6 @@ section h2 {
 
 section p {
   font-size: 1em; /* Consistent with body text */
-  margin-bottom: 15px;
 }
 
 section p strong  {
@@ -160,20 +159,19 @@ section p strong  {
 }
 
 section ul{
-  margin: -10px 0 20px 25px;
+  list-style-type: disc;
+  margin: 15px 0 20px 25px;
 }
 /* END SECTION STYLES */
 
 /* START SKILLS PAGE */
 #skills ul {
-  list-style-type: disc;
-  margin-left: 20px;
   padding: 0;
 }
 
 #skills ul li {
   font-size: 1em; 
-  margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 #skills ul li strong  {
@@ -368,7 +366,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 2rem; /* Space between form elements */
-  margin: 0 auto; 
+  margin: 15px auto 0 auto; 
   max-width: 600px; 
   padding: 20px;
 }
