@@ -1,0 +1,135 @@
+{
+    "category": "Trivia",
+    "questions": [
+      {
+        "question": "Which of these animals is known to have a trunk?",
+        "options": ["Elephant", "Giraffe", "Kangaroo", "Lion"],
+        "answer": "Elephant"
+      },
+      {
+        "question": "What is the largest island in the world?",
+        "options": ["Greenland", "Australia", "New Guinea", "Borneo"],
+        "answer": "Greenland"
+      },
+      {
+        "question": "Which fruit is known for having its seeds on the outside?",
+        "options": ["Strawberry", "Banana", "Apple", "Orange"],
+        "answer": "Strawberry"
+      },
+      {
+        "question": "Who was the first woman to win a Nobel Prize?",
+        "options": ["Marie Curie", "Rosalind Franklin", "Ada Lovelace", "Helen Keller"],
+        "answer": "Marie Curie"
+      },
+      {
+        "question": "Which band is famous for the hit song 'Bohemian Rhapsody'?",
+        "options": ["The Beatles", "Queen", "The Rolling Stones", "Led Zeppelin"],
+        "answer": "Queen"
+      },
+      {
+        "question": "Which animal is the largest mammal in the world?",
+        "options": ["Blue Whale", "Elephant", "Giraffe", "Shark"],
+        "answer": "Blue Whale"
+      },
+      {
+        "question": "What is the name of the wizarding school in the Harry Potter series?",
+        "options": ["Hogwarts", "Beauxbatons", "Durmstrang", "Ilvermorny"],
+        "answer": "Hogwarts"
+      },
+      {
+        "question": "What is the most common color of a 1-dollar bill in the United States?",
+        "options": ["Green", "Blue", "Red", "Yellow"],
+        "answer": "Green"
+      },
+      {
+        "question": "Which country is home to the Great Barrier Reef?",
+        "options": ["Australia", "United States", "Brazil", "South Africa"],
+        "answer": "Australia"
+      },
+      {
+        "question": "Which popular board game involves buying properties and collecting rent?",
+        "options": ["Monopoly", "Scrabble", "Clue", "Risk"],
+        "answer": "Monopoly"
+      },
+      {
+        "question": "What is the name of the fictional wizard in 'The Lord of the Rings'?",
+        "options": ["Gandalf", "Dumbledore", "Merlin", "Radagast"],
+        "answer": "Gandalf"
+      },
+      {
+        "question": "Which actor starred as Jack Dawson in the movie 'Titanic'?",
+        "options": ["Leonardo DiCaprio", "Johnny Depp", "Brad Pitt", "Tom Hanks"],
+        "answer": "Leonardo DiCaprio"
+      },
+      {
+        "question": "Which instrument is primarily used in jazz music?",
+        "options": ["Saxophone", "Trumpet", "Piano", "Drums"],
+        "answer": "Saxophone"
+      },
+      {
+        "question": "What is the smallest unit of matter?",
+        "options": ["Atom", "Molecule", "Proton", "Electron"],
+        "answer": "Atom"
+      },
+      {
+        "question": "Which social media platform is known for its 140-character posts?",
+        "options": ["Facebook", "Instagram", "Twitter", "Snapchat"],
+        "answer": "Twitter"
+      },
+      {
+        "question": "Which famous artist is known for cutting off his own ear?",
+        "options": ["Pablo Picasso", "Vincent van Gogh", "Salvador Dalí", "Claude Monet"],
+        "answer": "Vincent van Gogh"
+      },
+      {
+        "question": "Which color is traditionally associated with royalty?",
+        "options": ["Gold", "Purple", "Blue", "Red"],
+        "answer": "Purple"
+      },
+      {
+        "question": "Which is the longest-running animated TV show in the United States?",
+        "options": ["South Park", "Family Guy", "The Simpsons", "Futurama"],
+        "answer": "The Simpsons"
+      },
+      {
+        "question": "What is the most spoken language in the world?",
+        "options": ["Mandarin", "English", "Spanish", "Hindi"],
+        "answer": "Mandarin"
+      },
+      {
+        "question": "Which fictional character is known for his iconic yellow suit and red cape?",
+        "options": ["Superman", "Batman", "Spider-Man", "Flash"],
+        "answer": "Superman"
+      },
+      {
+        "question": "Which country is known as the Land of the Midnight Sun?",
+        "options": ["Finland", "Norway", "Iceland", "Sweden"],
+        "answer": "Norway"
+      },
+      {
+        "question": "Which element is the most abundant in the Earth's atmosphere?",
+        "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
+        "answer": "Nitrogen"
+      },
+      {
+        "question": "Who is credited with inventing the first practical telephone?",
+        "options": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Michael Faraday"],
+        "answer": "Alexander Graham Bell"
+      },
+      {
+        "question": "Which ocean is the largest in the world?",
+        "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        "answer": "Pacific Ocean"
+      },
+      {
+        "question": "What kind of animal is a Komodo dragon?",
+        "options": ["Lizard", "Snake", "Bird", "Mammal"],
+        "answer": "Lizard"
+      },
+      {
+        "question": "Which element has the chemical symbol 'Na'?",
+        "options": ["Nitrogen", "Neon", "Sodium", "Nickel"],
+        "answer": "Sodium"
+      }
+    ]
+  }  

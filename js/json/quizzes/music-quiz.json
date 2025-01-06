@@ -1,0 +1,140 @@
+{
+    "category": "Music",
+    "questions": [
+      {
+        "question": "Who is known as the 'King of Pop'?",
+        "options": ["Michael Jackson", "Elvis Presley", "Freddie Mercury", "Prince"],
+        "answer": "Michael Jackson"
+      },
+      {
+        "question": "Which band released the album 'Abbey Road'?",
+        "options": ["The Beatles", "The Rolling Stones", "Pink Floyd", "Led Zeppelin"],
+        "answer": "The Beatles"
+      },
+      {
+        "question": "Which singer is known for the hit song 'Rolling in the Deep'?",
+        "options": ["Beyoncé", "Adele", "Rihanna", "Shakira"],
+        "answer": "Adele"
+      },
+      {
+        "question": "Which genre of music did Elvis Presley primarily perform?",
+        "options": ["Rock 'n' Roll", "Jazz", "Blues", "Country"],
+        "answer": "Rock 'n' Roll"
+      },
+      {
+        "question": "Which musical instrument does Yo-Yo Ma play?",
+        "options": ["Piano", "Violin", "Cello", "Guitar"],
+        "answer": "Cello"
+      },
+      {
+        "question": "What year did Michael Jackson release 'Thriller'?",
+        "options": ["1984", "1982", "1990", "1986"],
+        "answer": "1982"
+      },
+      {
+        "question": "Which band was Freddie Mercury a member of?",
+        "options": ["Queen", "The Beatles", "The Who", "Pink Floyd"],
+        "answer": "Queen"
+      },
+      {
+        "question": "Who is known as the 'Queen of Pop'?",
+        "options": ["Madonna", "Lady Gaga", "Whitney Houston", "Beyoncé"],
+        "answer": "Madonna"
+      },
+      {
+        "question": "Which artist performed the song 'Like a Rolling Stone'?",
+        "options": ["Bob Dylan", "Jimi Hendrix", "Neil Young", "Bruce Springsteen"],
+        "answer": "Bob Dylan"
+      },
+      {
+        "question": "Which country is the origin of the band ABBA?",
+        "options": ["Sweden", "Norway", "Germany", "UK"],
+        "answer": "Sweden"
+      },
+      {
+        "question": "What is the name of Beyoncé's alter ego?",
+        "options": ["Sasha Fierce", "Lil Kim", "Nicki Minaj", "Rita Ora"],
+        "answer": "Sasha Fierce"
+      },
+      {
+        "question": "Which pop star's real name is Stefani Joanne Angelina Germanotta?",
+        "options": ["Lady Gaga", "Katy Perry", "Ariana Grande", "Miley Cyrus"],
+        "answer": "Lady Gaga"
+      },
+      {
+        "question": "What instrument does Paul McCartney play in The Beatles?",
+        "options": ["Bass guitar", "Drums", "Lead guitar", "Piano"],
+        "answer": "Bass guitar"
+      },
+      {
+        "question": "Who recorded the song 'I Will Always Love You'?",
+        "options": ["Whitney Houston", "Celine Dion", "Aretha Franklin", "Mariah Carey"],
+        "answer": "Whitney Houston"
+      },
+      {
+        "question": "Which band wrote the song 'Smells Like Teen Spirit'?",
+        "options": ["Nirvana", "Pearl Jam", "Foo Fighters", "Soundgarden"],
+        "answer": "Nirvana"
+      },
+      {
+        "question": "Which instrument does Keith Richards play in The Rolling Stones?",
+        "options": ["Guitar", "Bass", "Drums", "Piano"],
+        "answer": "Guitar"
+      },
+      {
+        "question": "What year did Woodstock take place?",
+        "options": ["1967", "1969", "1971", "1973"],
+        "answer": "1969"
+      },
+      {
+        "question": "Which country is singer Shakira from?",
+        "options": ["Mexico", "Colombia", "Puerto Rico", "Brazil"],
+        "answer": "Colombia"
+      },
+      {
+        "question": "Who is known for the song 'Purple Haze'?",
+        "options": ["Jimi Hendrix", "Eric Clapton", "Jimmy Page", "Carlos Santana"],
+        "answer": "Jimi Hendrix"
+      },
+      {
+        "question": "Which artist's real name is Marshall Bruce Mathers III?",
+        "options": ["Eminem", "Drake", "Jay-Z", "Snoop Dogg"],
+        "answer": "Eminem"
+      },
+      {
+        "question": "Which artist performed 'Uptown Funk'?",
+        "options": ["Bruno Mars", "Pharrell Williams", "Justin Timberlake", "Ed Sheeran"],
+        "answer": "Bruno Mars"
+      },
+      {
+        "question": "Which British singer released 'Shape of You'?",
+        "options": ["Ed Sheeran", "Sam Smith", "Harry Styles", "George Ezra"],
+        "answer": "Ed Sheeran"
+      },
+      {
+        "question": "Which musical group was the 'Bee Gees'?",
+        "options": ["Pop", "Rock", "Disco", "Country"],
+        "answer": "Disco"
+      },
+      {
+        "question": "Which country is The Weeknd from?",
+        "options": ["USA", "Canada", "UK", "Australia"],
+        "answer": "Canada"
+      },
+      {
+        "question": "Who sang 'I Wanna Dance with Somebody'?",
+        "options": ["Whitney Houston", "Cyndi Lauper", "Madonna", "Mariah Carey"],
+        "answer": "Whitney Houston"
+      },
+      {
+        "question": "Who is the lead singer of the band U2?",
+        "options": ["Bono", "Edge", "Adam Clayton", "Larry Mullen Jr."],
+        "answer": "Bono"
+      },
+      {
+        "question": "Which 2000s song is known for the lyrics 'I'm a survivor, I'm not gonna give up'?",
+        "options": ["Survivor - Destiny's Child", "Fighter - Christina Aguilera", "Since U Been Gone - Kelly Clarkson", "Bleeding Love - Leona Lewis"],
+        "answer": "Survivor - Destiny's Child"
+      }
+    ]
+  }  

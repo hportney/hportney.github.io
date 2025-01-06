@@ -1,0 +1,120 @@
+{
+    "category": "History",
+    "questions": [
+      {
+        "question": "Who was the first President of the United States?",
+        "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
+        "answer": "George Washington"
+      },
+      {
+        "question": "In which year did World War II end?",
+        "options": ["1939", "1941", "1945", "1950"],
+        "answer": "1945"
+      },
+      {
+        "question": "Who was the first emperor of China?",
+        "options": ["Qin Shi Huang", "Li Shimin", "Genghis Khan", "Emperor Wu"],
+        "answer": "Qin Shi Huang"
+      },
+      {
+        "question": "Who discovered America in 1492?",
+        "options": ["Christopher Columbus", "Vasco da Gama", "Ferdinand Magellan", "Marco Polo"],
+        "answer": "Christopher Columbus"
+      },
+      {
+        "question": "Which ancient civilization built the pyramids of Giza?",
+        "options": ["Romans", "Egyptians", "Greeks", "Babylonians"],
+        "answer": "Egyptians"
+      },
+      {
+        "question": "Who was the leader of the Soviet Union during World War II?",
+        "options": ["Joseph Stalin", "Nikita Khrushchev", "Vladimir Lenin", "Leon Trotsky"],
+        "answer": "Joseph Stalin"
+      },
+      {
+        "question": "Which country was ruled by King Louis XVI during the French Revolution?",
+        "options": ["France", "Spain", "Germany", "Italy"],
+        "answer": "France"
+      },
+      {
+        "question": "In which year did the Berlin Wall fall?",
+        "options": ["1985", "1987", "1989", "1991"],
+        "answer": "1989"
+      },
+      {
+        "question": "Who was the leader of the Nazi party in Germany?",
+        "options": ["Adolf Hitler", "Heinrich Himmler", "Joseph Goebbels", "Hermann Göring"],
+        "answer": "Adolf Hitler"
+      },
+      {
+        "question": "Who was the first woman to fly solo across the Atlantic Ocean?",
+        "options": ["Amelia Earhart", "Bessie Coleman", "Harriet Quimby", "Jacqueline Cochran"],
+        "answer": "Amelia Earhart"
+      },
+      {
+        "question": "Which event marked the beginning of the American Revolution?",
+        "options": ["Battle of Lexington and Concord", "Boston Tea Party", "Signing of the Declaration of Independence", "Battle of Bunker Hill"],
+        "answer": "Battle of Lexington and Concord"
+      },
+      {
+        "question": "Who was the leader of the Indian independence movement?",
+        "options": ["Mahatma Gandhi", "Jawaharlal Nehru", "Subhas Chandra Bose", "Bhagat Singh"],
+        "answer": "Mahatma Gandhi"
+      },
+      {
+        "question": "Which ancient civilization developed the first system of writing?",
+        "options": ["Sumerians", "Egyptians", "Indus Valley", "Mayans"],
+        "answer": "Sumerians"
+      },
+      {
+        "question": "Which country was formerly known as Persia?",
+        "options": ["Iraq", "Iran", "Syria", "Jordan"],
+        "answer": "Iran"
+      },
+      {
+        "question": "In which year did the Titanic sink?",
+        "options": ["1900", "1912", "1920", "1930"],
+        "answer": "1912"
+      },
+      {
+        "question": "What year did the American Civil War begin?",
+        "options": ["1850", "1861", "1870", "1880"],
+        "answer": "1861"
+      },
+      {
+        "question": "Who was the leader of the Mongol Empire?",
+        "options": ["Genghis Khan", "Kublai Khan", "Tamerlane", "Attila the Hun"],
+        "answer": "Genghis Khan"
+      },
+      {
+        "question": "Which country did the United States fight in the Korean War?",
+        "options": ["China", "Soviet Union", "North Korea", "Japan"],
+        "answer": "North Korea"
+      },
+      {
+        "question": "Who was the first man to walk on the moon?",
+        "options": ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "Michael Collins"],
+        "answer": "Neil Armstrong"
+      },
+      {
+        "question": "Which empire was known for its vast network of roads and aqueducts?",
+        "options": ["Roman Empire", "Persian Empire", "Ottoman Empire", "Mongol Empire"],
+        "answer": "Roman Empire"
+      },
+      {
+        "question": "Who was the first president of South Africa after the end of apartheid?",
+        "options": ["Nelson Mandela", "Thabo Mbeki", "F.W. de Klerk", "Desmond Tutu"],
+        "answer": "Nelson Mandela"
+      },
+      {
+        "question": "Which war was fought between the North and South regions of the United States?",
+        "options": ["World War I", "World War II", "American Civil War", "Spanish-American War"],
+        "answer": "American Civil War"
+      },
+      {
+        "question": "Which ancient city was buried by the eruption of Mount Vesuvius in 79 AD?",
+        "options": ["Pompeii", "Athens", "Rome", "Carthage"],
+        "answer": "Pompeii"
+      }
+    ]
+  }  

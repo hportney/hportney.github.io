@@ -1,0 +1,160 @@
+{
+    "category": "Math",
+    "questions": [
+      {
+        "question": "What is 2 + 2?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "4"
+      },
+      {
+        "question": "What is 5 * 6?",
+        "options": ["30", "25", "40", "35"],
+        "answer": "30"
+      },
+      {
+        "question": "What is 10 - 3?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "7"
+      },
+      {
+        "question": "What is 12 ÷ 4?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3"
+      },
+      {
+        "question": "What is 9 + 8?",
+        "options": ["16", "17", "18", "19"],
+        "answer": "17"
+      },
+      {
+        "question": "What is the square root of 25?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "5"
+      },
+      {
+        "question": "What is 3 * 7?",
+        "options": ["20", "21", "22", "23"],
+        "answer": "21"
+      },
+      {
+        "question": "What is 15 ÷ 3?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5"
+      },
+      {
+        "question": "What is 100 - 25?",
+        "options": ["75", "80", "70", "65"],
+        "answer": "75"
+      },
+      {
+        "question": "What is 8 + 12?",
+        "options": ["18", "20", "22", "24"],
+        "answer": "20"
+      },
+      {
+        "question": "What is 7 * 8?",
+        "options": ["54", "55", "56", "57"],
+        "answer": "56"
+      },
+      {
+        "question": "What is 6 ÷ 2?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3"
+      },
+      {
+        "question": "What is 50 ÷ 5?",
+        "options": ["8", "9", "10", "11"],
+        "answer": "10"
+      },
+      {
+        "question": "What is 25 * 4?",
+        "options": ["100", "150", "125", "75"],
+        "answer": "100"
+      },
+      {
+        "question": "What is the value of π (Pi) rounded to 2 decimal places?",
+        "options": ["3.14", "3.16", "3.15", "3.13"],
+        "answer": "3.14"
+      },
+      {
+        "question": "What is the result of 15 + 9?",
+        "options": ["24", "23", "25", "26"],
+        "answer": "24"
+      },
+      {
+        "question": "What is 11 * 11?",
+        "options": ["121", "111", "131", "141"],
+        "answer": "121"
+      },
+      {
+        "question": "What is 64 ÷ 8?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "8"
+      },
+      {
+        "question": "What is 6 * 9?",
+        "options": ["52", "53", "54", "55"],
+        "answer": "54"
+      },
+      {
+        "question": "What is 15 ÷ 5?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3"
+      },
+      {
+        "question": "What is 100 + 50?",
+        "options": ["150", "160", "170", "180"],
+        "answer": "150"
+      },
+      {
+        "question": "What is 18 ÷ 3?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "6"
+      },
+      {
+        "question": "What is 9 * 9?",
+        "options": ["80", "81", "82", "83"],
+        "answer": "81"
+      },
+      {
+        "question": "What is the square root of 49?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "7"
+      },
+      {
+        "question": "What is 13 * 4?",
+        "options": ["51", "52", "53", "54"],
+        "answer": "52"
+      },
+      {
+        "question": "What is 81 ÷ 9?",
+        "options": ["9", "8", "10", "11"],
+        "answer": "9"
+      },
+      {
+        "question": "What is the value of 2^3?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "8"
+      },
+      {
+        "question": "What is the next prime number after 10?",
+        "options": ["11", "12", "13", "14"],
+        "answer": "11"
+      },
+      {
+        "question": "What is 10 * 10?",
+        "options": ["90", "100", "110", "120"],
+        "answer": "100"
+      },
+      {
+        "question": "What is 45 ÷ 5?",
+        "options": ["9", "8", "7", "6"],
+        "answer": "9"
+      },
+      {
+        "question": "What is 20 * 4?",
+        "options": ["75", "80", "85", "90"],
+        "answer": "80"
+      }
+    ]
+  }  
