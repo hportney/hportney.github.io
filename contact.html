@@ -70,7 +70,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Howard Portney.&nbsp; All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Howard Portney.&nbsp; All rights reserved.</p>
     </footer>
 
     <script>
@@ -111,7 +111,11 @@
     
         // Show the message div
         messageDiv.style.display = "block"; // Ensure it stays visible
-    </script>    
+    </script> 
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>

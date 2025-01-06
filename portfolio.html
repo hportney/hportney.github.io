@@ -77,7 +77,11 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Howard Portney.&nbsp; All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Howard Portney.&nbsp; All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
