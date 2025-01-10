@@ -346,6 +346,102 @@ button:disabled {
 }
 /* END RANDOM QUOTE GENERATOR PORTFOLIO PAGE */
 
+/* START QUIZ APP PORTFOLIO PAGE */
+#quizSection {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#startButton    {
+  margin: 0 auto;
+}
+
+/* Style for disabled button */
+#startButton:disabled {
+  background-color: #ccc; /* Grayed-out background color */
+  color: #666; /* Lighter text color */
+  cursor: not-allowed; /* Change the cursor to show it's disabled */
+}
+
+/* Optionally, add a message for the disabled state */
+#quizTypeSelect:invalid + #startButton:disabled {
+  background-color: #f0f0f0; /* Very light gray */
+  color: #bbb; /* Lighter color when it's disabled */
+}
+
+#quizTypeSelect {
+  background-color: #5D7D91;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1em; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+#startNewQuizButton {
+  display: none;  /* Initially hidden */
+}
+
+.correct {
+  background-color: #28a745; /* More contrasting green */
+}
+
+.incorrect {
+  background-color: #dc3545; /* More contrasting red */
+}
+
+.feedback {
+  font-size: 18px;
+  margin: 20px 0; /* Increased margin for better spacing */
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #quizSection {
+      width: 100%;
+  }
+  #buttonContainer {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+#startNewQuizButton {
+  display: none; /* Initially hidden */
+  background-color: #5D7D91;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+}
+
+/* Add a hover state for when the button is displayed */
+#startNewQuizButton:hover {
+  background-color: #a9d3e8;
+  color: #425968;
+}
+/* END QUIZ APP PORTFOLIO PAGE */
+
+
 /* Call to Action */
 #cta {
   background-color: #5D7D91;
@@ -565,4 +661,23 @@ footer {
   section ul{
     margin: -10px 0 20px 15px;
   }
+
+  /* Quiz App */
+  #startButton    {
+    margin: 0 auto;
+    width: 70%;
+}
+
+#quizTypeSelect {
+    background-color: #5D7D91;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em; 
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+    padding: 10px; 
+}
 }
