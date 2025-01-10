@@ -7,47 +7,11 @@
     <meta name="keywords" content="Web Developer, HTML, CSS, JavaScript, PHP, Portfolio">
     <title>Howard Portney, Web Developer - Portfolio Page - Quiz App</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
-    <style>
-        /* Style to center quiz content */
-        #quizSection {
-            text-align: center;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        #buttonContainer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        #buttonContainer button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 0 10px;
-        }
-
-        .correct {
-            background-color: green;
-        }
-
-        .incorrect {
-            background-color: red;
-        }
-
-        .feedback {
-            font-size: 18px;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-    </style>
+    <script src="js/quiz-app.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header role="navigation">
         <h1>Howard Portney</h1>
         <h2>Web Developer</h2>
         <nav>
@@ -69,13 +33,20 @@
             <!-- Quiz Type Selection -->
             <section id="quizTypeSection">
                 <h2>Select Quiz Type</h2>
-                <select id="quizTypeSelect" onchange="updateButtonText()">
-                    <option value="" disabled selected>Select a quiz type</option>
-                    <option value="music">Music</option>
-                    <option value="history">History</option>
-                    <option value="trivia">Trivia</option>
-                </select>
-                <button id="startButton" onclick="startQuiz()" disabled>Start Quiz</button>
+                <form id="quizTypeForm" onsubmit="return false;"> <!-- Prevent form submission -->
+                    <select id="quizTypeSelect" onchange="updateButtonText()">
+                        <option value="" disabled selected>Choose a quiz category</option>
+                        <option value="music">Music (10 random questions)</option>
+                        <option value="history">History (10 random questions)</option>
+                        <option value="trivia">Trivia (10 random questions)</option>
+                    </select>
+                    
+                    <!-- Start Quiz button -->
+                    <button id="startButton" onclick="startQuiz(event)" disabled>Select a quiz category to start</button>
+                    
+                    <!-- Start New Quiz button, initially hidden -->
+                    <button id="startNewQuizButton" style="display:none;" onclick="startNewQuiz()">Start a New Quiz</button>
+                </form>                
             </section>
 
             <!-- Quiz Questions & Options (This will appear after clicking the button) -->
@@ -127,120 +98,5 @@
     <footer>
         <p>&copy; <span id="year"></span> Howard Portney.&nbsp; All rights reserved.</p>
     </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let questions = [];
-        let selectedQuizType = '';
-
-        // Update the button text based on selected quiz type
-        function updateButtonText() {
-            const quizTypeSelect = document.getElementById('quizTypeSelect');
-            const startButton = document.getElementById('startButton');
-            selectedQuizType = quizTypeSelect.value;
-            if (selectedQuizType) {
-                startButton.disabled = false;
-                startButton.textContent = `Start ${selectedQuizType.charAt(0).toUpperCase() + selectedQuizType.slice(1)} Quiz`;
-            } else {
-                startButton.disabled = true;
-            }
-        }
-
-        // Fetch quiz data and start the quiz
-        function startQuiz() {
-            const filePath = `js/json/quizzes/${selectedQuizType}-quiz.json`;
-            fetch(filePath)
-                .then(response => response.json())
-                .then(data => {
-                    questions = data.questions;
-                    questions = getRandomQuestions(questions, 10); // Get 10 random questions
-                    currentQuestionIndex = 0;
-                    score = 0;
-                    displayQuestion();
-                    document.getElementById('quizTypeSection').style.display = 'none';
-                    document.getElementById('quizSection').style.display = 'block';
-                })
-                .catch(error => alert('Error loading quiz data!'));
-        }
-
-        // Randomize the order and pick 10 random questions from the pool
-        function getRandomQuestions(arr, num) {
-            let shuffled = arr.sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, num);
-        }
-
-        // Display current question
-        function displayQuestion() {
-            const currentQuestion = questions[currentQuestionIndex];
-            document.getElementById('questionNumber').textContent = `Question ${currentQuestionIndex + 1}`;
-            const questionContainer = document.getElementById('questionContainer');
-            questionContainer.innerHTML = `
-                <p>${currentQuestion.question}</p>
-                ${currentQuestion.options.map((option, index) => {
-                    return `<button class="answerButton" onclick="checkAnswer(${index})">${option}</button>`;
-                }).join('')}
-            `;
-            document.getElementById('nextButton').style.display = 'inline-block';
-            document.getElementById('prevButton').style.display = 'inline-block';
-            document.getElementById('feedbackMessage').textContent = ''; // Reset feedback message
-            clearButtonStyles(); // Clear any previous button styles
-        }
-
-        // Check answer
-        function checkAnswer(selectedOptionIndex) {
-            const currentQuestion = questions[currentQuestionIndex];
-            const selectedButton = document.querySelectorAll('.answerButton')[selectedOptionIndex];
-            
-            // Display feedback
-            if (currentQuestion.options[selectedOptionIndex] === currentQuestion.answer) {
-                score++;
-                selectedButton.classList.add('correct');
-                document.getElementById('feedbackMessage').textContent = 'Correct!';
-            } else {
-                selectedButton.classList.add('incorrect');
-                document.getElementById('feedbackMessage').textContent = 'Incorrect!';
-            }
-
-            document.getElementById('nextButton').style.display = 'inline-block';
-            document.getElementById('prevButton').style.display = 'inline-block';
-        }
-
-        // Clear button styles
-        function clearButtonStyles() {
-            const buttons = document.querySelectorAll('.answerButton');
-            buttons.forEach(button => {
-                button.classList.remove('correct', 'incorrect');
-            });
-        }
-
-        // Go to next question
-        function nextQuestion() {
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                displayQuestion();
-            } else {
-                endQuiz();
-            }
-        }
-
-        // Go to previous question
-        function previousQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                displayQuestion();
-            }
-        }
-
-        // End the quiz and show the score card
-        function endQuiz() {
-            document.getElementById('scoreCard').style.display = 'block';
-            document.getElementById('finalScore').textContent = `${score} / ${questions.length}`;
-            document.getElementById('nextButton').style.display = 'none';
-            document.getElementById('prevButton').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
