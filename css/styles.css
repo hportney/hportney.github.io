@@ -147,6 +147,7 @@ section h1 {
 section h2 {
   color: #FFFFFF;
   font-size: 2.2rem;
+  margin-top: 20px;
   text-shadow: 2px 2px #384C59;
 }
 
@@ -160,7 +161,7 @@ section p strong  {
 
 section ul{
   list-style-type: disc;
-  margin: 15px 0 20px 25px;
+  margin: 0 0 20px 25px;
 }
 /* END SECTION STYLES */
 
@@ -288,7 +289,7 @@ section ul{
 
 button {
     background-color: #C0A772; 
-    border: none;  /* Remove border completely */
+    border: none;  
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Subtle box-shadow to maintain visual consistency */
     color: #403f3f; 
@@ -361,8 +362,10 @@ button:disabled {
   justify-content: center;
 }
 
-#startButton    {
-  margin: 0 auto;
+#startButton:disabled {
+  background-color: #ccc; /* Grayed-out background color */
+  color: #666; /* Lighter text color */
+  cursor: not-allowed; /* Change the cursor to show it's disabled */
 }
 
 /* Style for disabled button */
@@ -392,29 +395,51 @@ button:disabled {
   display: none;  /* Initially hidden */
 }
 
-.correct {
-  background-color: #28a745; /* More contrasting green */
+.answerButton {
+  background-color: #5D7D91;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  width: 80%;
 }
 
-.incorrect {
-  background-color: #dc3545; /* More contrasting red */
-}
-
-.feedback {
-  font-size: 18px;
-  margin: 20px 0; /* Increased margin for better spacing */
+#feedbackMessage {
+  display: inline-block;  /* Make sure it's visible initially */
+  padding: 10px 20px;
+  border-radius: 5px;
   font-weight: bold;
+  text-align: center;
+  max-width: 80%;
+  margin: 20px auto;
+  word-wrap: break-word;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 1; /* Fully visible initially */
+  visibility: visible; /* Ensure it's in the flow */
+  transition: opacity 3s ease-out; /* Smooth fade-out over 3 seconds */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  #quizSection {
-      width: 100%;
-  }
-  #buttonContainer {
-      flex-direction: column;
-      align-items: center;
-  }
+.hidden {
+  opacity: 0; /* This will trigger the fade-out */
+}
+
+.answerButton:hover {
+  background-color: #a9d3e8;
+  color: #000000;
+}
+
+#answerSelectionReminder, #finalAnswerReminder {
+  background-color: rgba(244, 67, 54, 0.8);
+  border-radius: 8px;
+  color: #FFFFFF;  /* Lighter red for a softer effect */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5z);
+  margin: 20px auto 0;
+  visibility: hidden;  /* Initially hidden */
+  opacity: 0;  /* Initially hidden */
+  transition: opacity 1s ease-out;  /* Fade in effect when needed */
+  width: 70%;
 }
 
 #startNewQuizButton {
@@ -438,6 +463,78 @@ button:disabled {
 #startNewQuizButton:hover {
   background-color: #a9d3e8;
   color: #425968;
+}
+
+#prevButton {
+  background-color: #5D7D91;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 10px 0 0;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  width: 50%;
+}
+
+#prevButton:hover {
+  background-color: #a9d3e8;
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+#nextButton {
+  background-color: #5D7D91;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0px 0 10px;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  width: 50%;
+}
+
+#nextButton:hover {
+  background-color: #a9d3e8;
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+#submitAllButton {
+  background-color: #4CAF50; /* Green */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0px 0 10px;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  width: 50%;
+}
+
+#submitAllButton:hover {
+  background-color: #81C784; /* Light green */
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+#submitAllButton:active {
+  background-color: #388E3C; /* Darker green for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 /* END QUIZ APP PORTFOLIO PAGE */
 
@@ -658,8 +755,9 @@ footer {
   section h2 {
     font-size: 3rem; 
   }
+  
   section ul{
-    margin: -10px 0 20px 15px;
+    margin: -5px 0 20px 15px;
   }
 
   /* Quiz App */
@@ -679,5 +777,13 @@ footer {
     text-align: center;
     width: 70%;
     padding: 10px; 
+}
+
+#prevButton, #nextButton {
+  width: 30%;
+}
+
+.answerButton {
+  width: 60%;
 }
 }
