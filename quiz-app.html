@@ -49,17 +49,21 @@
                 </form>                
             </section>
 
-            <!-- Quiz Questions & Options (This will appear after clicking the button) -->
             <section id="quizSection" style="display:none;">
                 <div id="questionNumber"></div>
                 <div id="questionContainer"></div>
+                <div id="answerSelectionReminder" style="visibility:hidden;"></div>
                 <div class="feedback" id="feedbackMessage"></div>
-                <div id="scoreCard" style="display:none;">
-                    <h3>Your Score: <span id="finalScore"></span></h3>
+                <!-- Final Answer Reminder Message -->
+                <div id="finalAnswerReminder" style="visibility: hidden; opacity: 0;">
+                    Please select an answer for the final question before retrieving your score.
                 </div>
+                <div id="scoreCard" style="display:block; visibility:visible;">
+                    <h3>Your Score: <span id="finalScore"></span></h3>
+                </div>                              
                 <div id="buttonContainer">
-                    <button id="prevButton" onclick="previousQuestion()" style="display:none;">Previous Question</button>
-                    <button id="nextButton" onclick="nextQuestion()" style="display:none;">Next Question</button>
+                    <button id="prevButton" onclick="previousQuestion()" style="display:none;">&#x25C0; Previous Question</button>
+                    <button id="nextButton" onclick="nextQuestion()" style="display:none;">Next Question &#x25B6;</button>
                 </div>
             </section>
 
