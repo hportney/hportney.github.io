@@ -29,7 +29,7 @@
         <!-- Portfolio Section -->
         <section id="portfolio">
             <h1>Quiz App</h1>
-
+        
             <!-- Quiz Type Selection -->
             <section id="quizTypeSection">
                 <h2>Select Quiz Type</h2>
@@ -40,62 +40,61 @@
                         <option value="history">History (10 random questions)</option>
                         <option value="trivia">Trivia (10 random questions)</option>
                     </select>
-                    
-                    <!-- Start Quiz button -->
                     <button id="startButton" onclick="startQuiz(event)" disabled>Select a quiz category to start</button>
-                    
-                    <!-- Start New Quiz button, initially hidden -->
-                    <button id="startNewQuizButton" style="display:none;" onclick="startNewQuiz()">Start a New Quiz</button>
                 </form>                
             </section>
-
+        
             <section id="quizSection" style="display:none;">
                 <div id="questionNumber"></div>
                 <div id="questionContainer"></div>
                 <div id="answerSelectionReminder" style="visibility:hidden;"></div>
                 <div class="feedback" id="feedbackMessage"></div>
-                <!-- Final Answer Reminder Message -->
-                <div id="finalAnswerReminder" style="visibility: hidden; opacity: 0;">
-                    Please select an answer for the final question before retrieving your score.
-                </div>
-                <div id="scoreCard" style="display:block; visibility:visible;">
-                    <h3>Your Score: <span id="finalScore"></span></h3>
-                </div>                              
+                <div id="finalAnswerReminder" style="visibility: hidden; opacity: 0;">Please select an answer for the final question before retrieving your score.</div>
                 <div id="buttonContainer">
                     <button id="prevButton" onclick="previousQuestion()" style="display:none;">&#x25C0; Previous Question</button>
                     <button id="nextButton" onclick="nextQuestion()" style="display:none;">Next Question &#x25B6;</button>
                 </div>
-            </section>
-
-            <!-- Features -->
-            <h2>Features:</h2>
-            <ul>
-                <li><strong>Multiple Quiz Categories:</strong> Users can choose from various topics (e.g., music, history, trivia).</li>
-                <li><strong>Dynamic Question Display:</strong> Random questions from a larger pool each time.</li>
-                <li><strong>Real-Time Feedback:</strong> Instant feedback on correct or incorrect answers.</li>
-                <li><strong>Results and Scoring:</strong> Displays final score with insights for missed questions.</li>
-                <li><strong>Expandable Quiz Collection:</strong> Quiz data stored in a JSON file for easy updates.</li>
-            </ul>
-
-            <!-- Tech Stack -->
-            <h2>Tech Stack:</h2>
-            <ul>
-                <li><strong>JavaScript</strong></li>
-                <li><strong>JSON</strong></li>
-                <li><strong>HTML5</strong></li>
-                <li><strong>CSS3</strong></li>
-            </ul>
-
-            <!-- Skills Demonstrated -->
-            <h2>Skills Demonstrated:</h2>
-            <ul>
-                <li><strong>DOM Manipulation:</strong> Dynamically updating content without page reloads.</li>
-                <li><strong>JavaScript Fundamentals:</strong> Working with arrays, randomization, and events.</li>
-                <li><strong>JSON Handling:</strong> Fetching and parsing quiz data from JSON files.</li>
-                <li><strong>Responsive Design:</strong> Ensuring the app looks good on all screen sizes.</li>
-                <li><strong>UI/UX Design:</strong> Creating an intuitive and user-friendly interface.</li>
-            </ul>
-        </section>
+            </section> 
+        
+            <!-- Initially hide the scorecard, also keep it outside of the quizSection container -->
+            <div id="scoreCard" style="display:none; opacity:0;">
+                <h3>Your Score: <span id="finalScore"></span></h3>
+                <p id="accuracyMessage"></p> <!-- Accuracy message -->
+                <button id="startNewQuizButton" style="display:none;" onclick="startNewQuiz()">Start a New Quiz</button>
+            </div>
+        
+            <!-- Following Sections (Make sure these are not impacted by #scoreCard) -->
+            <div class="content-wrapper">
+                <!-- Features -->
+                <h2>Features:</h2>
+                <ul>
+                    <li><strong>Custom Quiz Categories:</strong> Choose from a variety of topics, with easy addition of new categories.</li>
+                    <li><strong>Randomized Questions:</strong> Every quiz is unique, thanks to random question selection.</li>
+                    <li><strong>Instant Feedback:</strong> Receive immediate feedback after each answer to stay engaged throughout the quiz.</li>
+                    <li><strong>Results Display:</strong> View your final score in a clean, straightforward scorecard.</li>
+                    <li><strong>Content Updates:</strong> Easily expand the quiz pool by editing a JSON file.</li>
+                </ul>
+            
+                <!-- Tech Stack -->
+                <h2>Tech Stack:</h2>
+                <ul>
+                    <li><strong>JavaScript (ES6+)</strong></li>
+                    <li><strong>JSON</strong></li>
+                    <li><strong>HTML5</strong></li>
+                    <li><strong>CSS3</strong></li>
+                </ul>                
+            
+                <!-- Skills Demonstrated -->
+                <h2>Skills Demonstrated:</h2>
+                <ul>
+                    <li><strong>DOM Manipulation:</strong> Dynamically updates content without reloading the page, improving user experience.</li>
+                    <li><strong>JavaScript Logic:</strong> Utilized arrays, randomization, and event handling to power quiz functionality.</li>
+                    <li><strong>JSON Handling:</strong> Fetch and parse quiz data to display questions and answers dynamically.</li>
+                    <li><strong>Responsive Design & CSS3:</strong> Applied CSS3 to create an adaptive layout for a consistent, user-friendly experience across all devices.</li>
+                    <li><strong>UI/UX Design:</strong> Prioritized intuitive, user-friendly design for easy navigation and interaction.</li>
+                </ul>
+            </div>            
+        </section>        
     </div>
 
     <!-- Footer -->
