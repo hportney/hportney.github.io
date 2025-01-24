@@ -105,19 +105,20 @@ function resetFeedbackMessage() {
     feedbackMessage.style.color = '';
     feedbackMessage.style.textShadow = '';
     feedbackMessage.style.opacity = 1; // Ensure it's fully visible initially
-    feedbackMessage.style.visibility = 'hidden'; // Ensure visibility is controlled programmatically
+    feedbackMessage.classList.add('hidden'); // Hide it using the hidden class
 }
 
 // Check answer
 function checkAnswer(selectedOptionIndex, buttonElement) {
     if (lastClickedAnswer !== null && lastClickedAnswer !== selectedOptionIndex) {
-        // Hide the previous feedback if user changes their answer
+        // Hide the previous feedback if the user changes their answer
         resetFeedbackMessage();
     }
 
     const currentQuestion = questions[currentQuestionIndex];
     const feedbackMessage = document.getElementById('feedbackMessage');
-    const finalAnswerReminderElement = document.getElementById('finalAnswerReminder');  // Find the reminder message element
+    const finalAnswerReminderElement = document.getElementById('finalAnswerReminder');
+    const answerSelectionReminderElement = document.getElementById('answerSelectionReminder');
 
     // Highlight the clicked button
     buttonElement.classList.add('clicked');
@@ -128,14 +129,15 @@ function checkAnswer(selectedOptionIndex, buttonElement) {
         feedbackMessage.textContent = 'Correct!';
         feedbackMessage.style.color = '#FFFFFF';
         feedbackMessage.style.backgroundColor = 'rgba(76, 175, 80, 0.8)';
+        score++;  // Increment score if the answer is correct
     } else {
         feedbackMessage.textContent = 'Incorrect!';
         feedbackMessage.style.color = '#FFFFFF';
         feedbackMessage.style.backgroundColor = 'rgba(244, 67, 54, 0.8)';
     }
 
-    // Ensure feedback is visible for 3 seconds
-    feedbackMessage.style.visibility = 'visible';
+    // Ensure the feedback message is visible
+    feedbackMessage.classList.remove('hidden');  // Make sure it's visible
     feedbackMessage.style.transition = 'opacity 1s ease-out';
     feedbackMessage.style.opacity = 1;
 
@@ -143,6 +145,10 @@ function checkAnswer(selectedOptionIndex, buttonElement) {
     setTimeout(function() {
         feedbackMessage.style.transition = 'opacity 1s ease-out';
         feedbackMessage.style.opacity = 0;
+        // After fading out, hide the feedback completely
+        setTimeout(() => {
+            feedbackMessage.classList.add('hidden'); // Use the hidden class to completely hide it
+        }, 1000); // Match the opacity transition time
     }, 3000); // Delay the fade out for 3 seconds
 
     // Hide the final question reminder message (if any)
@@ -151,58 +157,35 @@ function checkAnswer(selectedOptionIndex, buttonElement) {
         finalAnswerReminderElement.style.opacity = '0';
     }
 
+    // Hide the reminder message immediately after selecting an answer
+    if (answerSelectionReminderElement) {
+        answerSelectionReminderElement.style.visibility = 'hidden';
+        answerSelectionReminderElement.style.opacity = '0';
+    }
+
     // Mark that an answer has been selected
     isAnswerSelected = true;
 }
 
 // Proceed to the next question immediately, and fade-out the feedback in the background
 function nextQuestion() {
-    console.log('nextQuestion function called'); // Debugging to check if the function is invoked
-
     const answerSelectionReminderElement = document.getElementById('answerSelectionReminder');
+    const currentQuestionOptions = document.querySelectorAll('.answerButton');
 
-    // Check if an answer is selected
+    // If no answer is selected, show the reminder message and prevent moving forward
     if (!isAnswerSelected) {
-        // If no answer is selected, show the reminder message and prevent moving forward
-        console.log('No answer selected. Showing reminder message.');
-        answerSelectionReminderElement.textContent = "Please select an answer before moving to the next question.";
+        answerSelectionReminderElement.innerHTML = `
+            <span class="warning-icon">!</span> Please select an answer before moving to the next question.
+        `;
         answerSelectionReminderElement.style.visibility = 'visible';  // Make it visible
         answerSelectionReminderElement.style.opacity = '1';  // Ensure it's fully visible
         return;  // Prevent moving to the next question
-    } else {
-        // If an answer is selected, hide the reminder message
-        console.log('Answer selected. Hiding reminder message.');
-        answerSelectionReminderElement.style.visibility = 'hidden';
-        answerSelectionReminderElement.style.opacity = '0';
     }
 
-    // Get all the answer buttons for the current question
-    const currentQuestionOptions = document.querySelectorAll('.answerButton');  // Adjusted to select all answer buttons
+    // Proceed to next question and reset the feedback message visibility
+    resetFeedbackMessage();
 
-    // Loop through the options to find the selected (clicked) answer
-    let selectedAnswer = null;
-    currentQuestionOptions.forEach((option) => {
-        if (option.classList.contains('clicked')) {
-            selectedAnswer = option.textContent; // Assuming the answer's text is its value
-        }
-    });
-
-    console.log('Selected Answer:', selectedAnswer); // Log the selected answer
-
-    if (selectedAnswer) {
-        const currentQuestion = questions[currentQuestionIndex];
-
-        // Check if the selected answer is correct
-        if (selectedAnswer === currentQuestion.answer) {
-            score++;
-            console.log('Answer is correct. Incrementing score.');
-        }
-    }
-
-    // Proceed to the next question after checking the answer
     currentQuestionIndex++;  // Move to the next question
-    console.log('currentQuestionIndex:', currentQuestionIndex);
-    console.log('Total Questions:', questions.length);
 
     if (currentQuestionIndex < questions.length) {
         // Display the next question
@@ -212,20 +195,33 @@ function nextQuestion() {
         endQuiz();
     }
 
-    // Clear any feedback message after proceeding
-    const feedbackMessage = document.getElementById('feedbackMessage');
-    feedbackMessage.style.visibility = 'hidden';
-    feedbackMessage.style.opacity = '0';
-
     // Clear button selections
     currentQuestionOptions.forEach(option => {
-        option.classList.remove('clicked');  // Remove clicked style
+        option.classList.remove('clicked');
     });
 
     // Reset the flag to false for the next question
     isAnswerSelected = false;
 }
 
+// Enable or disable the Submit button based on whether the final answer is selected
+function checkFinalAnswer() {
+    const submitButton = document.getElementById("submitQuizButton");
+    const finalAnswerReminder = document.getElementById("finalAnswerReminder");
+    const currentQuestion = questions[currentQuestionIndex]; // Get the current question (last question in this case)
+
+    // If the final question is answered, enable the submit button
+    if (isAnswerSelected && currentQuestionIndex === questions.length - 1) {
+        submitButton.disabled = false;
+        finalAnswerReminder.style.visibility = "hidden"; // Hide reminder if the final answer is selected
+    } else {
+        submitButton.disabled = true;
+        finalAnswerReminder.style.visibility = "visible"; // Show reminder if no answer selected
+        finalAnswerReminder.style.opacity = "1"; // Ensure visibility
+    }
+}
+
+// Toggle the visibility of the navigation buttons
 function toggleNavigationButtons() {
     const nextButton = document.getElementById('nextButton');
     const prevButton = document.getElementById('prevButton');
@@ -238,123 +234,137 @@ function toggleNavigationButtons() {
 // Check if it's the last question and display a submit button
 function checkForFinalQuestion() {
     const nextButton = document.getElementById('nextButton');
-    const buttonContainer = document.getElementById('buttonContainer'); // Use the correct ID
+    const buttonContainer = document.getElementById('buttonContainer');
     let submitButton = document.getElementById('submitAllButton'); // Check if submit button already exists
 
-    // Hide the next button if it's the last question
+    // Create the Submit button if not already present
+    if (!submitButton) {
+        submitButton = document.createElement('button');
+        submitButton.id = 'submitAllButton';
+        submitButton.textContent = 'Submit Quiz';
+        submitButton.onclick = submitQuiz; // Attach the submitQuiz function here
+        buttonContainer.appendChild(submitButton);
+        console.log("Submit button created and event listener attached.");
+    }
+
+    // Show Submit button on the last question, hide Next button
     if (currentQuestionIndex === questions.length - 1) {
         nextButton.style.display = 'none';
-
-        // Create and append the submit button only if it doesn't exist
-        if (!submitButton) {
-            submitButton = document.createElement('button');
-            submitButton.textContent = 'Submit All Answers';
-            submitButton.id = 'submitAllButton';
-            submitButton.onclick = endQuiz; // Call endQuiz when the button is clicked
-            buttonContainer.appendChild(submitButton); // Append to the button container
-        }
+        submitButton.style.display = 'inline-block'; // Show submit button
     } else {
-        // Ensure the submit button is hidden if not on the last question
-        if (submitButton) {
-            submitButton.style.display = 'none';
-        }
+        submitButton.style.display = 'none';
+        nextButton.style.display = 'inline-block'; // Show next button
     }
 }
 
-// End the quiz and show the scorecard
+// End quiz and show the results
 function endQuiz() {
-    console.log('endQuiz function called'); // Debugging
-
-    // Get the final question (last question)
-    const currentQuestion = questions[currentQuestionIndex];
-    console.log('Current Question:', currentQuestion); // Log the current question
-
-    // Check if the last question has an answer selected
-    const currentQuestionOptions = document.querySelectorAll('.answerButton');
-    const isAnswerSelected = Array.from(currentQuestionOptions).some(button => button.classList.contains('clicked'));
-    console.log('Is Answer Selected:', isAnswerSelected); // Log whether the answer is selected
-
-    // Get the final answer reminder element
-    const finalAnswerReminderElement = document.getElementById('finalAnswerReminder');
-    if (finalAnswerReminderElement) {
-        // If the final question is not answered, show the final answer reminder message
-        if (!isAnswerSelected && currentQuestionIndex === questions.length - 1) {
-            finalAnswerReminderElement.textContent = "Please select an answer for the final question before retrieving your score.";
-            finalAnswerReminderElement.style.visibility = 'visible';  // Make it visible
-            finalAnswerReminderElement.style.opacity = '1';  // Make sure it's fully visible
-            console.log('Final Answer Reminder Message Displayed'); // Log that the reminder was shown
-            return;  // Prevent score retrieval until final answer is selected
-        } else {
-            // Hide the final answer reminder if the final answer is selected
-            finalAnswerReminderElement.style.visibility = 'hidden';
-            finalAnswerReminderElement.style.opacity = '0';
-            console.log('Final Answer Reminder Message Hidden'); // Log that the reminder was hidden
-        }
-    } else {
-        console.error('Error: #finalAnswerReminder element not found!');
-        return; // Exit early to avoid proceeding with score calculation
+    const scoreCard = document.getElementById('scoreCard');
+    const quizSection = document.getElementById('quizSection');
+    const finalScore = document.getElementById('finalScore');
+    const accuracyMessage = document.getElementById('accuracyMessage');
+    const startNewQuizButton = document.getElementById('startNewQuizButton');
+    
+    // Ensure all elements exist before manipulating them
+    if (!scoreCard || !finalScore || !accuracyMessage || !startNewQuizButton) {
+        console.error('One or more elements are missing!');
+        return;  // Exit if any required element is missing
     }
 
-    // Proceed with calculating score if final question is answered
+    // Update the scorecard with the user's score
+    finalScore.textContent = `${score}/${questions.length}`;
+
+    // Calculate accuracy percentage
     const percentage = Math.round((score / questions.length) * 100);
-    console.log('Final Score Percentage:', percentage); // Log the final score percentage
-
-    // Find the scoreCard element
-    const scoreCardElement = document.getElementById('scoreCard');
-
-    // Check if the element exists
-    if (!scoreCardElement) {
-        console.error('Error: #scoreCard element not found!');
-        return;
-    }
-
-    // Update scoreCard content and show it
-    scoreCardElement.style.display = 'block';
-    scoreCardElement.style.visibility = 'visible';
-    scoreCardElement.innerHTML = `<h3>Your Score: ${score} / ${questions.length}</h3>`;
 
     // Add accuracy feedback based on percentage
-    const accuracyElement = document.createElement('p');
+    let accuracyText = '';
     if (percentage === 100) {
-        accuracyElement.textContent = `Accuracy: 100% correct! 🎉`;
+        accuracyText = `Accuracy: 100% correct! 🎉`;
     } else if (percentage >= 80) {
-        accuracyElement.textContent = `Accuracy: ${percentage}% (Great job!)`;
+        accuracyText = `Accuracy: ${percentage}% (Great job!)`;
     } else if (percentage >= 50) {
-        accuracyElement.textContent = `Accuracy: ${percentage}% (Good effort!)`;
+        accuracyText = `Accuracy: ${percentage}% (Good effort!)`;
     } else {
-        accuracyElement.textContent = `Accuracy: ${percentage}% (Keep trying! You'll get it next time!)`;
-    }
-    scoreCardElement.appendChild(accuracyElement);
-
-    console.log('ScoreCard updated:', scoreCardElement.innerHTML);
-
-    // Show the "Start New Quiz" button
-    const startNewQuizButton = document.getElementById('startNewQuizButton');
-    if (startNewQuizButton) {
-        startNewQuizButton.style.display = 'block';
+        accuracyText = `Accuracy: ${percentage}% (Keep trying! You'll get it next time!)`;
     }
 
-    // Hide navigation buttons
-    const nextButton = document.getElementById('nextButton');
-    const prevButton = document.getElementById('prevButton');
-    if (nextButton) nextButton.style.display = 'none';
-    if (prevButton) prevButton.style.display = 'none';
+    // Clear previous content and set new text
+    accuracyMessage.textContent = accuracyText;
+
+    // Fade out the quiz section
+    quizSection.style.transition = 'opacity 0.5s ease-out';
+    quizSection.style.opacity = 0;
+
+    setTimeout(() => {
+        quizSection.style.display = 'none'; // Hide the quiz section after fade-out
+
+        // Show the scorecard with a fade-in effect
+        scoreCard.style.display = 'block';
+        scoreCard.style.transition = 'opacity 0.5s ease-in';
+        scoreCard.style.opacity = 1;
+
+        // Ensure the "Start New Quiz" button is visible
+        startNewQuizButton.style.display = 'inline-block'; // Show button
+    }, 500); // Wait for the opacity transition to complete before hiding the quiz section
 }
 
-// Start a new quiz
+// Submit the quiz and display the results
+function submitQuiz() {
+    console.log("Submit button clicked");
+
+    const answerSelectionReminder = document.getElementById('answerSelectionReminder');
+    const finalAnswerReminder = document.getElementById('finalAnswerReminder');
+    const currentQuestionOptions = document.querySelectorAll('.answerButton');
+
+    // Ensure that these elements exist
+    if (!answerSelectionReminder || !finalAnswerReminder) {
+        console.error("Reminder elements not found!");
+        return;  // Exit the function if elements are not found
+    }
+
+    // Check if the user is on the last question and if no answer is selected
+    if (currentQuestionIndex === questions.length - 1 && !isAnswerSelected) {
+        // Show reminder message before submitting the final quiz
+        finalAnswerReminder.innerHTML = '<span class="warning-icon">!</span> Please select an answer before retrieving your score.';
+        finalAnswerReminder.style.visibility = 'visible';  // Make it visible
+        finalAnswerReminder.style.opacity = '1';  // Ensure it's fully visible
+    } else {
+        // If everything is okay (final question answered or any question answered)
+        finalAnswerReminder.style.visibility = 'hidden';  // Hide the reminder
+        finalAnswerReminder.style.opacity = '0';  // Ensure it's hidden
+
+        // Proceed to calculate the score and show the result
+        endQuiz();
+    }
+}
+
+// Function to clear quiz questions and answers
+function clearQuizQuestions() {
+    // Example: Remove all the questions and answers from the page
+    const questionContainer = document.getElementById('quizQuestions');
+    if (questionContainer) {
+        questionContainer.innerHTML = ''; // Clear the container
+    }
+
+    // You can also clear the individual question elements if needed
+    const allAnswers = document.querySelectorAll('.quiz-answer');
+    allAnswers.forEach(answer => {
+        answer.checked = false; // Uncheck any selected answers
+    });
+
+    // Optionally, clear any other quiz-related state
+    const scoreCard = document.getElementById('scoreCard');
+    if (scoreCard) {
+        scoreCard.style.display = 'none';  // Hide the score card before resetting the quiz
+        scoreCard.style.opacity = '0';  // Reset opacity for the next time
+    }
+}
+
+// Function to start a new quiz
 function startNewQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    questions = [];
-    selectedQuizType = '';
-
-    document.getElementById('scoreCard').style.display = 'none';
-    document.getElementById('startNewQuizButton').style.display = 'none';
-    document.getElementById('quizTypeSection').style.display = 'block';
-    document.getElementById('quizSection').style.display = 'none';
-
-    const startButton = document.getElementById('startButton');
-    startButton.disabled = true;
-    startButton.textContent = "Please choose a quiz category";
-    document.getElementById('feedbackMessage').textContent = '';
+    console.log('Starting a new quiz...');
+    
+    // Reload the page to reset everything
+    location.reload();
 }
