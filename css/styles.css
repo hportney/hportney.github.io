@@ -348,31 +348,8 @@ button:disabled {
 /* END RANDOM QUOTE GENERATOR PORTFOLIO PAGE */
 
 /* START QUIZ APP PORTFOLIO PAGE */
-#quizSection {
-  text-align: center;
-  max-width: 90%;
-  margin: 0 auto;
-  overflow: visible;
-}
-
-#buttonContainer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  justify-content: center;
-}
-
-#startButton:disabled {
-  background-color: #ccc; /* Grayed-out background color */
-  color: #666; /* Lighter text color */
-  cursor: not-allowed; /* Change the cursor to show it's disabled */
-}
-
-/* Style for disabled button */
-#startButton:disabled {
-  background-color: #ccc; /* Grayed-out background color */
-  color: #666; /* Lighter text color */
-  cursor: not-allowed; /* Change the cursor to show it's disabled */
+#quizTypeForm {
+  padding: 20px 0;
 }
 
 /* Optionally, add a message for the disabled state */
@@ -383,13 +360,71 @@ button:disabled {
 
 #quizTypeSelect {
   background-color: #5D7D91;
+  border-color: #a9d3e8;
   border-radius: 8px;
   color: #FFFFFF;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1em; 
+  font-size: 1em;
   margin: 0 auto;
   text-align: center;
+  padding: 30px;
 }
+
+#startButton    {
+  background-color: #4CAF50; /* Green */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 10px 0 0 10px;
+  padding: 2px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  width: 94%;
+}
+
+#startButton:hover {
+  background-color: #81C784; /* Light green */
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+#startButton:active {
+  background-color: #388E3C; /* Darker green for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Style for disabled button */
+#startButton:disabled {
+  background-color: #ccc; /* Grayed-out background color */
+  color: #666; /* Lighter text color */
+  cursor: not-allowed; /* Change the cursor to show it's disabled */
+}
+
+#quizSection {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+#buttonContainer {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/* Hide the 'answerSelectionReminder' and 'finalAnswerReminder' divs completely when they are hidden.
+   These elements had visibility set to hidden but still took up space in the layout. 
+   Using display: none removes them from the document flow entirely when they are not needed. */
+   #answerSelectionReminder[style*="visibility: hidden;"], 
+   #finalAnswerReminder[style*="visibility: hidden;"] {
+       display: none;
+   }
 
 #startNewQuizButton {
   display: none;  /* Initially hidden */
@@ -417,12 +452,12 @@ button:disabled {
   word-wrap: break-word;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   opacity: 1; /* Fully visible initially */
-  visibility: visible; /* Ensure it's in the flow */
-  transition: opacity 3s ease-out; /* Smooth fade-out over 3 seconds */
+  visibility: visible; /* Ensure it's in the flow initially */
+  transition: opacity 3s ease-out, visibility 0s ease 3s; /* Fade opacity over 3s, then hide visibility */
 }
 
 .hidden {
-  opacity: 0; /* This will trigger the fade-out */
+  display: none !important;  
 }
 
 .answerButton:hover {
@@ -431,38 +466,31 @@ button:disabled {
 }
 
 #answerSelectionReminder, #finalAnswerReminder {
-  background-color: rgba(244, 67, 54, 0.8);
+  background-color: rgb(237, 163, 163);
+  border: rgb(200	72	70) solid 2px;
   border-radius: 8px;
-  color: #FFFFFF;  /* Lighter red for a softer effect */
+  color: #000000; 
+  padding: 5px 0;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5z);
-  margin: 20px auto 0;
+  margin: 30px auto 0;
   visibility: hidden;  /* Initially hidden */
   opacity: 0;  /* Initially hidden */
   transition: opacity 1s ease-out;  /* Fade in effect when needed */
-  width: 70%;
-}
-
-#startNewQuizButton {
-  display: none; /* Initially hidden */
-  background-color: #5D7D91;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  color: #FFFFFF;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 20px;
-  padding: 10px 15px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
   width: 100%;
 }
 
-/* Add a hover state for when the button is displayed */
-#startNewQuizButton:hover {
-  background-color: #a9d3e8;
-  color: #425968;
+.warning-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  background-color: rgb(200	72	70);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 10px; /* Space between icon and text */
 }
 
 #prevButton {
@@ -532,6 +560,52 @@ button:disabled {
 }
 
 #submitAllButton:active {
+  background-color: #388E3C; /* Darker green for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#scoreCard {
+  background-color: #a9d3e8; 
+  border: 2px solid #137216;  
+  padding: 20px 20px 30px;
+  border-radius: 8px;
+  color: #333;  
+}
+
+#finalScore {
+  color: #2a7d2d; 
+}
+
+#accuracyMessage {
+  font-style: italic;
+  color: #2a7d2d;  /* Yellow for accuracy feedback */
+}
+
+#startNewQuizButton {
+  display: none; /* Initially hidden */
+  background-color: #4CAF50; /* Green */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+}
+
+/* Add a hover state for when the button is displayed */
+#startNewQuizButton:hover {
+  background-color: #81C784; /* Light green */
+  color: #425968;
+}
+
+#startNewQuizButton:active {
   background-color: #388E3C; /* Darker green for active state */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -761,29 +835,37 @@ footer {
   }
 
   /* Quiz App */
+  #quizTypeSelect {
+    width: 70%;
+    padding: 10px !important;
+}
+
   #startButton    {
     margin: 0 auto;
     width: 70%;
 }
 
-#quizTypeSelect {
-    background-color: #5D7D91;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    color: #FFFFFF;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1em; 
-    margin: 0 auto;
-    text-align: center;
-    width: 70%;
-    padding: 10px; 
-}
+  #prevButton, #nextButton {
+    width: 30%;
+  }
 
-#prevButton, #nextButton {
-  width: 30%;
-}
+  .answerButton {
+    width: 60%;
+  }
 
-.answerButton {
-  width: 60%;
-}
+  #answerSelectionReminder, #finalAnswerReminder {
+    width: 75%;
+  }
+
+  #feedbackMessage  {
+    width: 20%;
+  }
+
+  #scoreCard {
+    padding: 20px;
+  }
+
+  #startNewQuizButton {
+    width: 50%;
+  }
 }
