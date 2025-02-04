@@ -25,7 +25,7 @@ body {
   padding: 0 20px; 
 }
 
-body a:not(header nav ul li a):not(.thumbnail-gallery a) {
+body a:not(header nav ul li a):not(.thumbnail-gallery a):not(.breadcrumb a) {
   color: #B6E2B6;
   font-size: 2.2rem;
   font-variant: small-caps;
@@ -34,7 +34,7 @@ body a:not(header nav ul li a):not(.thumbnail-gallery a) {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-body a:not(header nav ul li a):not(.thumbnail-gallery a)::after {
+body a:not(header nav ul li a):not(.thumbnail-gallery a):not(.breadcrumb a)::after {
   background: #B6E2B6;
   bottom: -1px;
   content: '';
@@ -46,7 +46,7 @@ body a:not(header nav ul li a):not(.thumbnail-gallery a)::after {
   width: 0;
 }
 
-body a:not(header nav ul li a):not(.thumbnail-gallery a):hover::after {
+body a:not(header nav ul li a):not(.thumbnail-gallery a):not(.breadcrumb a):hover::after {
   width: 100%;
 }
 /* END BODY LAYOUT AND GLOBAL TYPOGRAPHY */
@@ -140,6 +140,7 @@ section {
 section h1 {
   color: #FFFFFF;
   font-size: 2.5rem;
+  font-variant: small-caps;
   margin-bottom: 15px;
   text-shadow: 2px 2px #384C59;
 }
@@ -147,7 +148,6 @@ section h1 {
 section h2 {
   color: #FFFFFF;
   font-size: 2.2rem;
-  margin-top: 20px;
   text-shadow: 2px 2px #384C59;
 }
 
@@ -180,11 +180,88 @@ section ul{
 }
 /* END SKILLS PAGE */
 
-/* START PORTFOLIO PAGE */
+/* START PORTFOLIO LANDING PAGE */
 #portfolio {
   padding: 2rem;
 }
 
+#portfolio p {
+  margin: 10px 0 20px;
+}
+
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center; 
+}
+
+.portfolio-card {
+  background: #384C59;
+  border: 1px solid #a9d3e8;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 280px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  border: 1px solid #B6E2B6;
+  transform: translateY(-10px);
+}
+
+.portfolio-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.portfolio-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.portfolio-card p {
+  font-size: 1.8rem;
+  color: #B6E2B6;
+}
+/* END PORTFOLIO LANDING PAGE */
+
+/* START PORTFOLIO BREADCRUMBS */
+.breadcrumb span  {
+  font-size: 0.9em;
+  color: #FFFFFF;
+}
+
+.breadcrumb a {
+  font-size: 1em;
+  color: #B6E2B6;
+  position: relative;
+  text-decoration: none;
+}
+
+.breadcrumb a::after {
+  background: #B6E2B6;
+  bottom: -1px;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: width 0.3s ease;
+  width: 0;
+}
+
+.breadcrumb a:hover::after {
+  width: 100%;
+}
+/* END PORTFOLIO BREADCRUMBS */
+
+/* START PORTFOLIO LIBERTY TAVERN PAGE */
 .thumbnail-gallery {
   display: grid;
   gap: 1.5rem; 
@@ -246,7 +323,7 @@ section ul{
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust column size for larger screens */
   }
 }
-/* END PORTFOLIO PAGE */
+/* END PORTFOLIO LIBERTY TAVERN PAGE */
 
 /* START COIN FLIP PORTFOLIO PAGE */
 .coin-container {
@@ -349,11 +426,12 @@ button:disabled {
 
 /* START QUIZ APP PORTFOLIO PAGE */
 #quizTypeForm {
-  padding: 20px 0;
+  padding: 20px;
+  width: 100%;
 }
 
 /* Optionally, add a message for the disabled state */
-#quizTypeSelect:invalid + #startButton:disabled {
+#quizTypeSelect:invalid + #startNewQuizButton:disabled {
   background-color: #f0f0f0; /* Very light gray */
   color: #bbb; /* Lighter color when it's disabled */
 }
@@ -364,45 +442,68 @@ button:disabled {
   border-radius: 8px;
   color: #FFFFFF;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1em;
+  font-size: 0.95em;
   margin: 0 auto;
   text-align: center;
-  padding: 30px;
 }
 
-#startButton    {
+/* Style for the initial Start Quiz button */
+#startNewQuizButton {
   background-color: #4CAF50; /* Green */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   color: #FFFFFF;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1em;
-  font-weight: bold;
-  margin: 10px 0 0 10px;
-  padding: 2px;
+  margin: 0;
   text-decoration: none;
   text-align: center;
   transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
-  width: 94%;
+  width: 100%;
+  display: inline-block; /* Visible initially */
 }
 
-#startButton:hover {
-  background-color: #81C784; /* Light green */
-  color: #000000;
-  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
-}
-
-#startButton:active {
-  background-color: #388E3C; /* Darker green for active state */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Style for disabled button */
-#startButton:disabled {
+/* Style for when the Start Quiz button is disabled */
+#startNewQuizButton:disabled {
   background-color: #ccc; /* Grayed-out background color */
   color: #666; /* Lighter text color */
   cursor: not-allowed; /* Change the cursor to show it's disabled */
+  box-shadow: none; /* Remove shadow for disabled state */
+}
+
+/* Remove hover effect for disabled button */
+#startNewQuizButton:disabled:hover {
+  background-color: #ccc; /* Keep it the same when hovering over the disabled button */
+  color: #666; /* Keep text color the same */
+}
+
+/* Style for the "Start Another New Quiz" button inside the score card */
+#startAnotherNewQuizButton {
+  background-color: #4CAF50; /* Green */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 10px 0 0;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+  width: 100%;
+  display: none; /* Initially hidden */
+}
+
+/* Hover and active states for the "Start Another New Quiz" button */
+#startAnotherNewQuizButton:hover {
+  background-color: #81C784; /* Light green */
+  color: #000000;
+}
+
+#startAnotherNewQuizButton:active {
+  background-color: #388E3C; /* Darker green for active state */
+}
+
+/* Show the "Start Another New Quiz" button */
+#startAnotherNewQuizButton.visible {
+  display: inline-block; /* Make it visible */
 }
 
 #quizSection {
@@ -580,35 +681,6 @@ button:disabled {
 #accuracyMessage {
   font-style: italic;
   color: #2a7d2d;  /* Yellow for accuracy feedback */
-}
-
-#startNewQuizButton {
-  display: none; /* Initially hidden */
-  background-color: #4CAF50; /* Green */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  color: #FFFFFF;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-top: 20px;
-  padding: 10px 15px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
-  width: 100%;
-}
-
-/* Add a hover state for when the button is displayed */
-#startNewQuizButton:hover {
-  background-color: #81C784; /* Light green */
-  color: #425968;
-}
-
-#startNewQuizButton:active {
-  background-color: #388E3C; /* Darker green for active state */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 /* END QUIZ APP PORTFOLIO PAGE */
 
@@ -834,13 +906,20 @@ footer {
     margin: -5px 0 20px 15px;
   }
 
+  /* Portfolio Landing page */
+  .portfolio-cards {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    justify-items: center; 
+  }
+
   /* Quiz App */
   #quizTypeSelect {
     width: 70%;
     padding: 10px !important;
 }
 
-  #startButton    {
+  #startNewQuizButton    {
     margin: 0 auto;
     width: 70%;
 }
@@ -866,6 +945,10 @@ footer {
   }
 
   #startNewQuizButton {
+    width: 70%;
+  }
+
+  #startAnotherNewQuizButton {
     width: 50%;
   }
 }
