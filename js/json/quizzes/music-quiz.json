@@ -1,140 +1,280 @@
 {
-    "category": "Music",
-    "questions": [
-      {
-        "question": "Who is known as the 'King of Pop'?",
-        "options": ["Michael Jackson", "Elvis Presley", "Freddie Mercury", "Prince"],
-        "answer": "Michael Jackson"
-      },
-      {
-        "question": "Which band released the album 'Abbey Road'?",
-        "options": ["The Beatles", "The Rolling Stones", "Pink Floyd", "Led Zeppelin"],
-        "answer": "The Beatles"
-      },
-      {
-        "question": "Which singer is known for the hit song 'Rolling in the Deep'?",
-        "options": ["Beyoncé", "Adele", "Rihanna", "Shakira"],
-        "answer": "Adele"
-      },
-      {
-        "question": "Which genre of music did Elvis Presley primarily perform?",
-        "options": ["Rock 'n' Roll", "Jazz", "Blues", "Country"],
-        "answer": "Rock 'n' Roll"
-      },
-      {
-        "question": "Which musical instrument does Yo-Yo Ma play?",
-        "options": ["Piano", "Violin", "Cello", "Guitar"],
-        "answer": "Cello"
-      },
-      {
-        "question": "What year did Michael Jackson release 'Thriller'?",
-        "options": ["1984", "1982", "1990", "1986"],
-        "answer": "1982"
-      },
-      {
-        "question": "Which band was Freddie Mercury a member of?",
-        "options": ["Queen", "The Beatles", "The Who", "Pink Floyd"],
-        "answer": "Queen"
-      },
-      {
-        "question": "Who is known as the 'Queen of Pop'?",
-        "options": ["Madonna", "Lady Gaga", "Whitney Houston", "Beyoncé"],
-        "answer": "Madonna"
-      },
-      {
-        "question": "Which artist performed the song 'Like a Rolling Stone'?",
-        "options": ["Bob Dylan", "Jimi Hendrix", "Neil Young", "Bruce Springsteen"],
-        "answer": "Bob Dylan"
-      },
-      {
-        "question": "Which country is the origin of the band ABBA?",
-        "options": ["Sweden", "Norway", "Germany", "UK"],
-        "answer": "Sweden"
-      },
-      {
-        "question": "What is the name of Beyoncé's alter ego?",
-        "options": ["Sasha Fierce", "Lil Kim", "Nicki Minaj", "Rita Ora"],
-        "answer": "Sasha Fierce"
-      },
-      {
-        "question": "Which pop star's real name is Stefani Joanne Angelina Germanotta?",
-        "options": ["Lady Gaga", "Katy Perry", "Ariana Grande", "Miley Cyrus"],
-        "answer": "Lady Gaga"
-      },
-      {
-        "question": "What instrument does Paul McCartney play in The Beatles?",
-        "options": ["Bass guitar", "Drums", "Lead guitar", "Piano"],
-        "answer": "Bass guitar"
-      },
-      {
-        "question": "Who recorded the song 'I Will Always Love You'?",
-        "options": ["Whitney Houston", "Celine Dion", "Aretha Franklin", "Mariah Carey"],
-        "answer": "Whitney Houston"
-      },
-      {
-        "question": "Which band wrote the song 'Smells Like Teen Spirit'?",
-        "options": ["Nirvana", "Pearl Jam", "Foo Fighters", "Soundgarden"],
-        "answer": "Nirvana"
-      },
-      {
-        "question": "Which instrument does Keith Richards play in The Rolling Stones?",
-        "options": ["Guitar", "Bass", "Drums", "Piano"],
-        "answer": "Guitar"
-      },
-      {
-        "question": "What year did Woodstock take place?",
-        "options": ["1967", "1969", "1971", "1973"],
-        "answer": "1969"
-      },
-      {
-        "question": "Which country is singer Shakira from?",
-        "options": ["Mexico", "Colombia", "Puerto Rico", "Brazil"],
-        "answer": "Colombia"
-      },
-      {
-        "question": "Who is known for the song 'Purple Haze'?",
-        "options": ["Jimi Hendrix", "Eric Clapton", "Jimmy Page", "Carlos Santana"],
-        "answer": "Jimi Hendrix"
-      },
-      {
-        "question": "Which artist's real name is Marshall Bruce Mathers III?",
-        "options": ["Eminem", "Drake", "Jay-Z", "Snoop Dogg"],
-        "answer": "Eminem"
-      },
-      {
-        "question": "Which artist performed 'Uptown Funk'?",
-        "options": ["Bruno Mars", "Pharrell Williams", "Justin Timberlake", "Ed Sheeran"],
-        "answer": "Bruno Mars"
-      },
-      {
-        "question": "Which British singer released 'Shape of You'?",
-        "options": ["Ed Sheeran", "Sam Smith", "Harry Styles", "George Ezra"],
-        "answer": "Ed Sheeran"
-      },
-      {
-        "question": "Which musical group was the 'Bee Gees'?",
-        "options": ["Pop", "Rock", "Disco", "Country"],
-        "answer": "Disco"
-      },
-      {
-        "question": "Which country is The Weeknd from?",
-        "options": ["USA", "Canada", "UK", "Australia"],
-        "answer": "Canada"
-      },
-      {
-        "question": "Who sang 'I Wanna Dance with Somebody'?",
-        "options": ["Whitney Houston", "Cyndi Lauper", "Madonna", "Mariah Carey"],
-        "answer": "Whitney Houston"
-      },
-      {
-        "question": "Who is the lead singer of the band U2?",
-        "options": ["Bono", "Edge", "Adam Clayton", "Larry Mullen Jr."],
-        "answer": "Bono"
-      },
-      {
-        "question": "Which 2000s song is known for the lyrics 'I'm a survivor, I'm not gonna give up'?",
-        "options": ["Survivor - Destiny's Child", "Fighter - Christina Aguilera", "Since U Been Gone - Kelly Clarkson", "Bleeding Love - Leona Lewis"],
-        "answer": "Survivor - Destiny's Child"
-      }
-    ]
-  }  
+  "category": "Music",
+  "questions": [
+    {
+      "question": "Who is the lead vocalist of the band Maroon 5?",
+      "options": ["Adam Levine", "James Valentine", "Mickey Madden", "Jesse Carmichael"],
+      "answer": "Adam Levine"
+    },
+    {
+      "question": "Which artist is known for the hit song 'Uptown Funk'?",
+      "options": ["Bruno Mars", "Pharrell Williams", "Mark Ronson", "Ed Sheeran"],
+      "answer": "Mark Ronson"
+    },
+    {
+      "question": "Which 1990s female artist was known for the song 'Baby One More Time'?",
+      "options": ["Christina Aguilera", "Britney Spears", "Jessica Simpson", "Mandy Moore"],
+      "answer": "Britney Spears"
+    },
+    {
+      "question": "Which country is the band ABBA originally from?",
+      "options": ["USA", "Australia", "Sweden", "UK"],
+      "answer": "Sweden"
+    },
+    {
+      "question": "Who was the original lead singer of Fleetwood Mac?",
+      "options": ["Stevie Nicks", "Lindsey Buckingham", "Christine McVie", "Peter Green"],
+      "answer": "Peter Green"
+    },
+    {
+      "question": "Which famous musician wrote the song 'Imagine'?",
+      "options": ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"],
+      "answer": "John Lennon"
+    },
+    {
+      "question": "Which singer’s real name is Stefani Joanne Angelina Germanotta?",
+      "options": ["Ariana Grande", "Lady Gaga", "Katy Perry", "Miley Cyrus"],
+      "answer": "Lady Gaga"
+    },
+    {
+      "question": "Which band released the album 'Hotel California'?",
+      "options": ["The Eagles", "Fleetwood Mac", "The Rolling Stones", "Led Zeppelin"],
+      "answer": "The Eagles"
+    },
+    {
+      "question": "Which artist is known for the song 'Blinding Lights'?",
+      "options": ["The Weeknd", "Drake", "Kendrick Lamar", "Post Malone"],
+      "answer": "The Weeknd"
+    },
+    {
+      "question": "Who is the famous 'Purple One' known for his eccentric style and musical genius?",
+      "options": ["Prince", "Michael Jackson", "David Bowie", "Elton John"],
+      "answer": "Prince"
+    },
+    {
+      "question": "Which rapper’s real name is Aubrey Drake Graham?",
+      "options": ["Drake", "Kanye West", "Lil Wayne", "Jay-Z"],
+      "answer": "Drake"
+    },
+    {
+      "question": "Which British singer is known for hits like 'Rolling in the Deep' and 'Someone Like You'?",
+      "options": ["Adele", "Jessie J", "Amy Winehouse", "Leona Lewis"],
+      "answer": "Adele"
+    },
+    {
+      "question": "Who famously performed 'Like a Prayer'?",
+      "options": ["Madonna", "Lady Gaga", "Cher", "Celine Dion"],
+      "answer": "Madonna"
+    },
+    {
+      "question": "Which iconic rock band’s members include Freddie Mercury and Brian May?",
+      "options": ["The Rolling Stones", "Queen", "The Beatles", "The Who"],
+      "answer": "Queen"
+    },
+    {
+      "question": "Which artist released the song 'Wrecking Ball'?",
+      "options": ["Katy Perry", "Miley Cyrus", "Ariana Grande", "Beyoncé"],
+      "answer": "Miley Cyrus"
+    },
+    {
+      "question": "Which classic rock band performed 'Stairway to Heaven'?",
+      "options": ["Led Zeppelin", "Pink Floyd", "The Rolling Stones", "The Doors"],
+      "answer": "Led Zeppelin"
+    },
+    {
+      "question": "Which song did Whitney Houston famously sing in the movie 'The Bodyguard'?",
+      "options": ["I Will Always Love You", "Greatest Love of All", "How Will I Know", "I Have Nothing"],
+      "answer": "I Will Always Love You"
+    },
+    {
+      "question": "Which Canadian artist is famous for the song 'Sorry'?",
+      "options": ["Justin Bieber", "Shawn Mendes", "Drake", "The Weeknd"],
+      "answer": "Justin Bieber"
+    },
+    {
+      "question": "Which singer’s alter ego is known as 'Slim Shady'?",
+      "options": ["Kanye West", "Eminem", "Jay-Z", "Lil Wayne"],
+      "answer": "Eminem"
+    },
+    {
+      "question": "Which 1990s band is known for the song 'Smells Like Teen Spirit'?",
+      "options": ["Nirvana", "Pearl Jam", "Foo Fighters", "Soundgarden"],
+      "answer": "Nirvana"
+    },
+    {
+      "question": "Which band released the album 'Abbey Road'?",
+      "options": ["The Beatles", "The Rolling Stones", "Led Zeppelin", "Pink Floyd"],
+      "answer": "The Beatles"
+    },
+    {
+      "question": "Which rapper performed the song 'Lose Yourself'?",
+      "options": ["Eminem", "Drake", "Jay-Z", "Kendrick Lamar"],
+      "answer": "Eminem"
+    },
+    {
+      "question": "Which musical artist is known for 'Bad Romance'?",
+      "options": ["Lady Gaga", "Katy Perry", "Ariana Grande", "Rihanna"],
+      "answer": "Lady Gaga"
+    },
+    {
+      "question": "Which Beatles album was released in 1967 and was known for its psychedelic style?",
+      "options": ["Sgt. Pepper's Lonely Hearts Club Band", "Revolver", "Rubber Soul", "The White Album"],
+      "answer": "Sgt. Pepper's Lonely Hearts Club Band"
+    },
+    {
+      "question": "Who is known as the 'King of Reggae'?",
+      "options": ["Peter Tosh", "Bob Marley", "Jimmy Cliff", "Burning Spear"],
+      "answer": "Bob Marley"
+    },
+    {
+      "question": "Who is the best-selling female artist of all time?",
+      "options": ["Mariah Carey", "Whitney Houston", "Celine Dion", "Madonna"],
+      "answer": "Celine Dion"
+    },
+    {
+      "question": "Which artist performed the hit song 'Thriller'?",
+      "options": ["Michael Jackson", "Prince", "Elvis Presley", "James Brown"],
+      "answer": "Michael Jackson"
+    },
+    {
+      "question": "Which famous rock band was originally formed in 1970?",
+      "options": ["The Rolling Stones", "The Beatles", "Led Zeppelin", "Pink Floyd"],
+      "answer": "Led Zeppelin"
+    },
+    {
+      "question": "Which pop star is known for her famous alter ego, 'Sasha Fierce'?",
+      "options": ["Rihanna", "Beyoncé", "Nicki Minaj", "Lady Gaga"],
+      "answer": "Beyoncé"
+    },
+    {
+      "question": "Who is known as the 'Queen of Soul'?",
+      "options": ["Aretha Franklin", "Tina Turner", "Etta James", "Whitney Houston"],
+      "answer": "Aretha Franklin"
+    },
+    {
+      "question": "Which 1980s pop icon was famous for the hit song 'Like a Virgin'?",
+      "options": ["Madonna", "Cyndi Lauper", "Kylie Minogue", "Debbie Gibson"],
+      "answer": "Madonna"
+    },
+    {
+      "question": "Which rock band is known for the song 'Bohemian Rhapsody'?",
+      "options": ["The Beatles", "Queen", "Pink Floyd", "The Rolling Stones"],
+      "answer": "Queen"
+    },
+    {
+      "question": "Which rapper's real name is Curtis James Jackson?",
+      "options": ["Eminem", "Drake", "Snoop Dogg", "50 Cent"],
+      "answer": "50 Cent"
+    },
+    {
+      "question": "Who is famous for the song 'I Will Always Love You'?",
+      "options": ["Celine Dion", "Aretha Franklin", "Whitney Houston", "Mariah Carey"],
+      "answer": "Whitney Houston"
+    },
+    {
+      "question": "Which band released the album 'Dark Side of the Moon'?",
+      "options": ["The Rolling Stones", "Pink Floyd", "The Beatles", "Led Zeppelin"],
+      "answer": "Pink Floyd"
+    },
+    {
+      "question": "Which country is the artist Shakira originally from?",
+      "options": ["Mexico", "Colombia", "Brazil", "Argentina"],
+      "answer": "Colombia"
+    },
+    {
+      "question": "Which musician is famous for his 'Purple Rain' album?",
+      "options": ["Elvis Presley", "Prince", "Michael Jackson", "David Bowie"],
+      "answer": "Prince"
+    },
+    {
+      "question": "Who sang the hit song 'Rolling in the Deep'?",
+      "options": ["Adele", "Amy Winehouse", "Sia", "Florence Welch"],
+      "answer": "Adele"
+    },
+    {
+      "question": "Which artist is known for the hit 'Shape of You'?",
+      "options": ["Sam Smith", "Ed Sheeran", "Justin Bieber", "Harry Styles"],
+      "answer": "Ed Sheeran"
+    },
+    {
+      "question": "Which artist is famous for the album '1989'?",
+      "options": ["Ariana Grande", "Taylor Swift", "Katy Perry", "Selena Gomez"],
+      "answer": "Taylor Swift"
+    },
+    {
+      "question": "Which band recorded the hit song 'Sweet Child O' Mine'?",
+      "options": ["Nirvana", "Guns N' Roses", "AC/DC", "Led Zeppelin"],
+      "answer": "Guns N' Roses"
+    },
+    {
+      "question": "Which rapper is known for his hit song 'HUMBLE.'?",
+      "options": ["Kendrick Lamar", "J. Cole", "Drake", "Travis Scott"],
+      "answer": "Kendrick Lamar"
+    },
+    {
+      "question": "Who was the lead singer of the band The Doors?",
+      "options": ["Mick Jagger", "Jim Morrison", "Robert Plant", "Freddie Mercury"],
+      "answer": "Jim Morrison"
+    },
+    {
+      "question": "Which artist is famous for the song 'Someone Like You'?",
+      "options": ["Ed Sheeran", "Adele", "Bruno Mars", "Rihanna"],
+      "answer": "Adele"
+    },
+    {
+      "question": "Which American pop star is known for the song 'Teenage Dream'?",
+      "options": ["Katy Perry", "Miley Cyrus", "Selena Gomez", "Ariana Grande"],
+      "answer": "Katy Perry"
+    },
+    {
+      "question": "Which musician was known as the 'King of Pop'?",
+      "options": ["Michael Jackson", "Prince", "Elvis Presley", "Madonna"],
+      "answer": "Michael Jackson"
+    },
+    {
+      "question": "Which artist is known for the song 'Bad Guy'?",
+      "options": ["Billie Eilish", "Lizzo", "Ariana Grande", "Katy Perry"],
+      "answer": "Billie Eilish"
+    },
+    {
+      "question": "Which rock band was formed by Ozzy Osbourne in 1968?",
+      "options": ["Black Sabbath", "Metallica", "Iron Maiden", "Led Zeppelin"],
+      "answer": "Black Sabbath"
+    },
+    {
+      "question": "Which pop star is known for the hit song 'Roar'?",
+      "options": ["Katy Perry", "Taylor Swift", "Beyoncé", "Selena Gomez"],
+      "answer": "Katy Perry"
+    },
+    {
+      "question": "Which artist released the album 'Lover' in 2019?",
+      "options": ["Ariana Grande", "Billie Eilish", "Taylor Swift", "Halsey"],
+      "answer": "Taylor Swift"
+    },
+    {
+      "question": "Which band was Freddie Mercury the lead singer of?",
+      "options": ["Queen", "The Rolling Stones", "The Beatles", "Pink Floyd"],
+      "answer": "Queen"
+    },
+    {
+      "question": "Which 1990s boy band is known for the song 'I Want It That Way'?",
+      "options": ["Backstreet Boys", "NSYNC", "98 Degrees", "Boyz II Men"],
+      "answer": "Backstreet Boys"
+    },
+    {
+      "question": "Who is known as the 'King of Latin Pop'?",
+      "options": ["Shakira", "Ricky Martin", "Luis Fonsi", "Enrique Iglesias"],
+      "answer": "Ricky Martin"
+    },
+    {
+      "question": "Which country is singer Sia originally from?",
+      "options": ["Australia", "USA", "Canada", "UK"],
+      "answer": "Australia"
+    },
+    {
+      "question": "Which band was originally called 'The New Yardbirds'?",
+      "options": ["Led Zeppelin", "The Who", "The Rolling Stones", "The Beatles"],
+      "answer": "Led Zeppelin"
+    }    
+  ]
+}
