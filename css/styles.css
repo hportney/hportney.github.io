@@ -244,8 +244,12 @@ section ul{
   text-decoration: none;
 }
 
-.breadcrumb span.arrow {
-  color: #B6E2B6 !important;
+.breadcrumb span.arrow, 
+button .arrow { 
+  color: #B6E2B6 !important; 
+  font-size: 1.2em !important; 
+  font-family: Arial, Helvetica, sans-serif !important; 
+  margin: 0 5px; 
 }
 
 .breadcrumb a::after {
@@ -598,7 +602,8 @@ button:disabled {
   margin-right: 10px; /* Space between icon and text */
 }
 
-#prevButton {
+/* PREVIOUS AND NEXT BUTTONS */
+#prevButton, #nextButton {
   background-color: #5D7D91;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -606,7 +611,7 @@ button:disabled {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 20px 10px 0 0;
+  margin: 20px;  /* Make the margin consistent for both buttons */
   padding: 15px;
   text-decoration: none;
   text-align: center;
@@ -618,22 +623,6 @@ button:disabled {
   background-color: #a9d3e8;
   color: #000000;
   transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
-}
-
-#nextButton {
-  background-color: #5D7D91;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  color: #FFFFFF;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 20px 0px 0 10px;
-  padding: 15px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
-  width: 50%;
 }
 
 #nextButton:hover {
