@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Howard Portney, Web Developer">
+    <title>Hair U Go - FAQs</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/js/hamburger-menu.js" defer></script>
+    <script src="/js/accordion.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/index.html"><img src="/images/logo.png" alt="Hair U Go - Home Page"></a>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button> 
+            <div id="hamburger-nav-container">
+                <ul id="nav-links"> 
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/faqs.html" class="header-nav-active">FAQs</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        
+            <nav id="nav-links-large-menu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/faqs.html" class="header-nav-active">FAQs</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Add backdrop for the menu overlay -->
+            <div id="backdrop"></div> <!-- This is the backdrop div -->
+        </header>
+
+        <main>
+            <section>
+                <h2>FAQs (Frequently Asked Questions):</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What is electrolysis? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Electrolysis is a permanent hair removal method that destroys hair follicles using electrical currents.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How does electrolysis work? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Electrolysis uses a fine probe to deliver a small electrical current into the hair follicle, destroying its ability to grow hair permanently.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Is electrolysis safe? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes! Electrolysis is an FDA-approved, safe, and effective method for permanent hair removal when performed by a trained professional.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Is electrolysis painful? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Most clients describe the sensation as mild discomfort, similar to a tiny pinch or a warm sensation. Numbing options are available for sensitive areas.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How many sessions will I need? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            The number of sessions varies depending on the treatment area, hair thickness, and individual hair growth cycles. Most clients need multiple sessions to achieve permanent results.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Does electrolysis work on all hair colors? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes! Unlike laser hair removal, electrolysis works on all hair colors, including blonde, gray, red, and white hairs.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Can electrolysis remove ingrown hairs? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Absolutely! Electrolysis not only removes ingrown hairs but also prevents them from growing back.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What should I do before my electrolysis appointment? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Avoid plucking or waxing before your session, as the hair needs to be in the follicle for treatment. Shaving is fine. Keep the area clean and moisturized.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What is the aftercare for electrolysis? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            After treatment, you may experience slight redness or swelling, which typically subsides within a few hours. Avoid sun exposure, makeup, and harsh skincare products on the treated area for 24 hours.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Does electrolysis work for PCOS-related hair growth? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes! Electrolysis is an effective solution for individuals with PCOS or hormonal hair growth concerns, offering permanent results over time.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Do you offer electrolysis for transgender clients? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes! We are proud to offer gender-affirming hair removal services for transgender and non-binary individuals.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How many FAQs can we list here? <span class="toggle-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            As many as we want, bish! 😬
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="year"></span> Hair U Go.&nbsp; All rights reserved.</p>
+        </footer>
+    
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </div>
+</body>
+</html>

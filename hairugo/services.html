@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Howard Portney, Web Developer">
+    <title>Hair U Go - Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/js/hamburger-menu.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/index.html"><img src="/images/logo.png" alt="Hair U Go - Home Page"></a>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button> 
+            <div id="hamburger-nav-container">
+                <ul id="nav-links"> 
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html" class="header-nav-active">Services</a></li>
+                    <li><a href="/faqs.html">FAQs</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        
+            <nav id="nav-links-large-menu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html" class="header-nav-active">Services</a></li>
+                    <li><a href="/faqs.html">FAQs</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Add backdrop for the menu overlay -->
+            <div id="backdrop"></div> <!-- This is the backdrop div -->
+        </header>
+
+        <main>
+            <section>
+                <h2>Services:</h2>
+                <div class="services-container">
+                    <h3>Our Electrolysis Services:</h3>
+                    <p>Electrolysis is the only FDA-approved method for permanent hair removal. No matter your skin tone, hair color, or hair type, electrolysis provides a safe and effective solution.</p>
+
+                    <h3>Facial Hair Removal</h3>
+                    <p>Unwanted facial hair can be frustrating. We target areas such as the upper lip, chin, cheeks, and jawline for smooth, hair-free skin.</p>
+
+                    <h3>Body Hair Removal</h3>
+                    <p>We offer electrolysis for various body areas, including:</p>
+                    <ul>
+                        <li>✔ Underarms</li>
+                        <li>✔ Arms</li>
+                        <li>✔ Legs</li>
+                        <li>✔ Bikini line</li>
+                        <li>✔ Chest</li>
+                        <li>✔ Back</li>
+                    </ul>
+
+                    <h3>Hormonal Hair Growth Solutions</h3>
+                    <p>If you're experiencing excessive hair growth due to hormonal changes, PCOS, or other medical conditions, electrolysis can provide a long-term solution.</p>
+
+                    <h3>Ingrown Hair Treatment</h3>
+                    <p>Electrolysis effectively eliminates ingrown hairs by treating the follicle at the root, preventing regrowth.</p>
+
+                    <h3>LGBTQ+ Friendly Hair Removal</h3>
+                    <p>We proudly provide electrolysis for transgender and non-binary individuals undergoing gender-affirming hair removal.</p>
+
+                    <h3>What to Expect</h3>
+                    <ul>
+                        <li>✔ Each session typically lasts between 15 minutes and an hour, depending on the treatment area.</li>
+                        <li>✔ Multiple sessions are required to achieve permanent results.</li>
+                        <li>✔ Our treatments are safe, precise, and designed for long-term effectiveness.</li>
+                    </ul>
+
+                    <p><strong><a href="/contact.html">Schedule your consultation today!</a></strong></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="year"></span> Hair U Go.&nbsp; All rights reserved.</p>
+        </footer>
+    
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </div>
+</body>
+</html>

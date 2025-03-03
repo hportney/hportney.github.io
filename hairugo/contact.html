@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Howard Portney, Web Developer">
+    <title>Hair U Go - Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/js/hamburger-menu.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/index.html"><img src="/images/logo.png" alt="Hair U Go - Home Page"></a>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button> 
+            <div id="hamburger-nav-container">
+                <ul id="nav-links"> 
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/faqs.html">FAQs</a></li>
+                    <li><a href="/contact.html" class="header-nav-active">Contact</a></li>
+                </ul>
+            </div>
+        
+            <nav id="nav-links-large-menu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/faqs.html">FAQs</a></li>
+                    <li><a href="/contact.html" class="header-nav-active">Contact</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Add backdrop for the menu overlay -->
+            <div id="backdrop"></div> <!-- This is the backdrop div -->
+        </header>
+
+        <main>
+            <section>
+                <h2>Contact:</h2>
+                <div class="contact-container">
+                    <p>
+                        For a <span class="highlight">free</span> consultation or to make an appointment, please contact:
+                    </p>                    
+                    <ul>
+                        <li><h3>Lisa Esposito:</h3></li>
+                        <li><strong>Phone:&nbsp;</strong> 917-617-3605</li>
+                        <li><strong>Email:&nbsp;</strong> <a href="mailto:certifyny@gmail.com">certifyny@gmail.com</a>
+                        </li>
+                        <li><strong>Address:&nbsp;</strong> 644 Sippy Street, Staten Island NY 103??</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="year"></span> Hair U Go.&nbsp; All rights reserved.</p>
+        </footer>
+    
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </div>
+</body>
+</html>

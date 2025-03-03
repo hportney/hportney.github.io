@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Howard Portney, Web Developer">
+    <title>Hair U Go - About</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/js/hamburger-menu.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/index.html"><img src="/images/logo.png" alt="Hair U Go - Home Page"></a>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button> 
+            <div id="hamburger-nav-container">
+                <ul id="nav-links"> 
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html" class="header-nav-active">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/faqs.html">FAQs</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        
+            <nav id="nav-links-large-menu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html" class="header-nav-active">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/faqs.html">FAQs</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Add backdrop for the menu overlay -->
+            <div id="backdrop"></div> <!-- This is the backdrop div -->
+        </header>
+
+        <main>
+            <section>
+                <h2>About Hair U Go:</h2>
+                <div class="about-container">
+                    <img class="head-shot" src="images/lisa-head-shot.png" alt="">
+                    <p>
+                        At Hair U Go, we are dedicated to providing expert electrolysis hair removal in a clean, comfortable, and professional setting. Our licensed electrologist, Lisa Esposito, has 70 years of experience 😬 helping clients achieve smooth, hair-free skin with permanent results.
+                        <br><br>
+                        We understand that hair removal is a personal journey, and we take pride in offering customized treatments designed to fit your individual needs. Whether you're dealing with unwanted facial hair, ingrown hairs, or hormonal-related hair growth, our proven electrolysis methods can help you achieve the confidence you deserve.
+                        <br><br>
+                        Your comfort and safety are our top priorities. We use state-of-the-art technology and follow strict hygiene standards to ensure the best possible experience.
+                        <br><br>
+                        <strong>Why Choose Us?</strong>
+                        <ul>
+                            <li>✔ Certified and experienced electrologist</li>
+                            <li>✔ Permanent, FDA-approved hair removal</li>
+                            <li>✔ Personalized treatment plans</li>
+                            <li>✔ Safe for all skin types and hair colors</li>
+                        </ul>
+                        
+                        <a href="/contact.html">Visit us today</a> and start your journey to permanent hair removal!
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="year"></span> Hair U Go.&nbsp; All rights reserved.</p>
+        </footer>
+    
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </div>
+</body>
+</html>
