@@ -1,0 +1,527 @@
+/* Reset some default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Default (standard) root font size */
+}
+
+/* BEGIN FONT DECLARATIONS */
+/* BEGIN MONTSERRAT FONTS */
+/* Regular for paragraphs & links */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat/Montserrat-Regular.woff2') format('woff2'),
+         url('/fonts/montserrat/Montserrat-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Bold for <h2> - <h4> */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat/Montserrat-Bold.woff2') format('woff2'),
+         url('/fonts/montserrat/Montserrat-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Black for <h1> */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat/Montserrat-Black.woff2') format('woff2'),
+         url('/fonts/montserrat/Montserrat-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Italic for emphasis */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat/Montserrat-Italic.woff2') format('woff2'),
+         url('/fonts/montserrat/Montserrat-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+/* END MONTSERRAT FONTS */
+
+/* BEGIN LATO FONTS */
+/* Regular for paragraphs & links */
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/lato/Lato-Regular.woff2') format('woff2'),
+         url('/fonts/lato/Lato-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Bold for <h2> - <h4> */
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/lato/Lato-Bold.woff2') format('woff2'),
+         url('/fonts/lato/Lato-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Black for emphasis (heavy headings) */
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/lato/Lato-Black.woff2') format('woff2'),
+         url('/fonts/lato/Lato-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Italic for emphasis */
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/lato/Lato-Italic.woff2') format('woff2'),
+         url('/fonts/lato/Lato-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+/* END LATO FONTS */
+/* END FONT DECLARATIONS */
+
+/* BODY START */
+body {
+    background-color: #315C4D;
+    color: #555555;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body a {
+    color: #4B9F7E; 
+    text-decoration: none; 
+}
+
+body a:hover {
+    text-decoration: underline; 
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul li  {
+    list-style-type: none;
+}
+
+.container  {
+    box-shadow: 3px 0 5px #caf5de, -3px 0 5px #caf5de, 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-size: 1.2rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0 auto;
+    width: 100%;
+}
+
+header {
+    background: linear-gradient(90deg, #6EAD91, #3B7861);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 1rem 2rem;
+}
+
+/* Hamburger Button Styling */
+header .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    width: 40px; /* Keeps the width of the button */
+    height: 30px; /* Keeps the height of the button */
+}
+
+header .hamburger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    margin: 8px 0; /* Increased space between the lines (adjust this value) */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* When the hamburger is active, rotate the top and bottom bars */
+header .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform-origin: center;
+    margin-top: -2px;
+}
+
+header .hamburger.active span:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+header .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    transform-origin: center;
+    margin-bottom: -2px;
+}
+
+/* Logo Styling */
+header .logo {
+    order: 1; /* Moves the logo to the right */
+}
+
+header .logo a img {
+    border-radius: 10px;
+    box-shadow: 3px 0 5px #caf5de, -3px 0 5px #caf5de, 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: auto;
+    width: 120px;
+}
+
+/* Mobile Navigation Container */
+#nav-links {
+    border-radius: 10px;
+    position: fixed;
+    top: 110px;
+    left: -250px; /* Start off-screen on the left */
+    width: 250px;
+    height: 100%;
+    background-color: #3B7861;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    list-style-type: none; /* Ensure no list styling */
+    margin: 0;
+    padding: 20px;
+}
+
+#nav-links li   {
+    padding: 10px 0;
+}
+
+#nav-links.active {
+    left: 0; /* Slide into view */
+}
+
+/* Mobile Link Styles - Make them look like buttons (same as desktop) */
+#nav-links li a {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #7FC8A9; 
+    border: 2px solid transparent; 
+    border-radius: 6px; 
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    width: 70%;
+}
+
+#nav-links li a:hover {
+    background-color: #A3E4C2; 
+    border-color: #4F8766; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+
+#nav-links li a.header-nav-active {
+    background-color: #5F9E89; 
+    border-color: #4B9F7E; 
+    color: #D0F5E4; 
+    font-weight: 600;
+}
+
+/* Backdrop Styling */
+#backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+/* Large screen (tablet, desktop, laptop) navigation */
+#nav-links-large-menu {
+    display: none;
+}
+
+#nav-links-large-menu ul {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul#nav-links-large-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Hover and active link styles */
+header nav ul li a,
+#nav-links-mobile-menu li a {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #7FC8A9; 
+    border: 2px solid transparent; 
+    border-radius: 6px; 
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav ul li a:hover,
+#nav-links-mobile-menu li a:hover {
+    background-color: #A3E4C2; 
+    border-color: #4F8766; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+
+header nav ul li a.header-nav-active,
+#nav-links-mobile-menu li a.header-nav-active {
+    background-color: #5F9E89; 
+    border-color: #4B9F7E; 
+    color: #D0F5E4; 
+    font-weight: 600;
+}
+
+main    {
+    background-color: #F2FAF5;
+    color: #555555;
+    padding: 20px;
+}
+
+main section h2  {
+    color: #4F8766; 
+    font-size: 1.75rem;
+    letter-spacing: .1rem;
+    margin: 30px 0 40px;
+}
+
+main section p  {
+    margin: 15px 0;
+}
+
+.head-shot  {
+    background-color: #3B7861;
+    border: 2px solid transparent; 
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
+    float: right;
+    margin: 20px;
+    padding: 10px 10px 0 10px;
+    width: 50%;
+    max-width: 100%;
+}
+
+section::after {
+    content: "";
+    display: block;
+    clear: both; /* This will be used automatically to clear the images that were floated  */
+  } 
+  
+/* START PAGE CONTENT CONTAINERS */
+.home-container, 
+.about-container, 
+.services-container, 
+.faq-container, 
+.contact-container  {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-container p,
+.about-container p,
+.services-container p,
+.faq-container p,
+.contact-container p  {
+    margin: 3px 0 20px;
+}
+
+.home-container ul,
+.about-container ul,
+.services-container ul,
+.faq-container ul,
+.contact-container ul  {
+    margin: 3px 0 20px;
+}
+/* END PAGE CONTENT CONTAINERS */
+
+/* START FAQS PAGE */
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.faq-question {
+    color: #4F8766;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f9f9f9;
+    border: none;
+    text-align: left;
+    transition: background 0.3s ease-in-out;
+}
+
+.faq-question:hover {
+    background: #ececec;
+}
+
+.faq-answer {
+    height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: height 0.3s ease-in-out, padding 0.3s ease;
+}
+
+.faq-answer.open {
+    padding-top: 20px;  
+    padding-bottom: 20px; 
+    max-height: 1000px;
+    height: auto;  
+}
+.faq-answer.closing {
+    opacity: 0;
+}
+
+.toggle-icon {
+    font-size: 1.5em; 
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.faq-question[aria-expanded="true"] .toggle-icon {
+    content: "−"; /* Ensures minus appears when expanded */
+}
+/* END FAQS PAGE */
+
+/* START CONTACT PAGE */
+.contact-container  {
+    line-height: 1.7;
+}
+.contact-container ul li h3 {
+    font-size: 1.25rem;
+}
+.contact-container p {
+    font-size: 1.2rem; 
+}
+
+.contact-container .highlight {
+    font-weight: bold;
+    color: #4F8766; 
+    text-transform: uppercase;
+}
+
+.contact-container ul li {
+    font-size: 1rem; 
+}
+
+.contact-container ul li strong {
+    font-size: 1.125rem; 
+}
+
+.contact-container ul li a {
+    font-size: 1.1rem; 
+    color: #4B9F7E; 
+    text-decoration: none; 
+}
+
+.contact-container ul li a:hover {
+    text-decoration: underline; 
+}
+/* END CONTACT PAGE */
+
+footer  {
+    background-color: #7FC8A9;
+    background: linear-gradient(90deg, #6EAD91, #3B7861);
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    color: #caf5de;
+    padding: 15px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .container  {
+        max-width: 1200px;
+    }
+    header {
+        flex-direction: row; /* Default layout for larger screens */
+        justify-content: space-between; /* Space out the logo and hamburger */
+    }
+
+    header .logo {
+        order: 0; /* Return logo to its original position */
+    }
+
+    header .hamburger {
+        display: none;
+    }
+
+    /* Display nav links normally on larger screens */
+    #nav-links {
+        display: block;
+    }
+
+    /* Backdrop is not needed on larger screens */
+    #backdrop {
+        display: none;
+    }
+
+    /* Display the large screen navigation */
+    #nav-links-large-menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .head-shot  {
+        width: 40%;
+    }
+}
