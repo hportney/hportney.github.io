@@ -73,4 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     initializeMenuState();
+
+    // Function to manage aria-hidden for the desktop nav
+    function updateAriaHidden() {
+        const desktopNav = document.getElementById("nav-links-large-menu");
+
+        if (window.innerWidth >= 768) {
+            desktopNav.removeAttribute("aria-hidden"); // Show to screen readers
+        } else {
+            desktopNav.setAttribute("aria-hidden", "true"); // Hide from screen readers
+        }
+    }
+
+    // Run on load and window resize
+    updateAriaHidden();
+    window.addEventListener("resize", updateAriaHidden);
 });
