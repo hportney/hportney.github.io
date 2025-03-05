@@ -97,13 +97,38 @@ body {
     padding: 0;
 }
 
-body a {
-    color: #4B9F7E; 
-    text-decoration: none; 
+/* Apply to all links EXCEPT those inside #nav-links and #nav-links-large-menu */
+a:not(#nav-links a, #nav-links-large-menu a) {
+    font-size: 1.1rem;
+    color: #4B9F7E;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px; /* Space for underline */
+    transition: color 0.3s ease-in-out;
 }
 
-body a:hover {
-    text-decoration: underline; 
+/* Animated underline effect for all links EXCEPT header nav */
+a:not(#nav-links a, #nav-links-large-menu a)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4B9F7E; /* Match link color */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for text links (excluding nav) */
+a:not(#nav-links a, #nav-links-large-menu a):hover {
+    color: #3B7861; /* Slightly darker green on hover */
+}
+
+a:not(#nav-links a, #nav-links-large-menu a):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 h1, h2, h3 {
@@ -114,15 +139,34 @@ ul li  {
     list-style-type: none;
 }
 
-.container  {
-    box-shadow: 3px 0 5px #caf5de, -3px 0 5px #caf5de, 0 2px 5px rgba(0, 0, 0, 0.2);
+.container {
+    box-shadow: 4px 0 7px #caf5de, -4px 0 7px #caf5de, 0 4px 8px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 4px 0 7px #caf5de, -4px 0 7px #caf5de, 0 2px 5px rgba(0, 0, 0, 0.2);
     display: grid;
     grid-template-rows: auto 1fr auto;
     font-size: 1.2rem;
     min-height: 100vh;
     min-height: 100dvh;
     margin: 0 auto;
-    width: 100%;
+    max-width: calc(100vw - 30px);
+    width: calc(100vw - 30px);
+}
+
+@media (orientation: landscape) {
+    .container {
+        width: calc(100vw - 14px);
+        max-width: calc(100vw - 14px);
+        margin-left: 7px; 
+        margin-right: 7px;
+        box-shadow: 
+            4px 0 10px rgba(202, 245, 222, 0.7), 
+            -4px 0 10px rgba(202, 245, 222, 0.7), 
+            0 4px 12px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 
+            4px 0 10px rgba(202, 245, 222, 0.7), 
+            -4px 0 10px rgba(202, 245, 222, 0.7), 
+            0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 }
 
 header {
@@ -220,7 +264,7 @@ header .logo a img {
     left: 0; /* Slide into view */
 }
 
-/* Mobile Link Styles - Make them look like buttons (same as desktop) */
+/* Mobile Screen Navigation */
 #nav-links li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     display: inline-block;
@@ -265,31 +309,22 @@ header .logo a img {
     z-index: 999;
 }
 
-/* Large screen (tablet, desktop, laptop) navigation */
-#nav-links-large-menu {
+/* Large Screen Navigation (tablet, desktop, laptop) */
+header nav#nav-links-large-menu {
     display: none;
 }
 
-#nav-links-large-menu ul {
+header nav#nav-links-large-menu ul {
     display: flex;
     gap: 1rem;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul#nav-links-large-menu {
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
     list-style-type: none;
-    padding: 0;
+    justify-content: space-between;
     margin: 0;
+    padding: 0;
 }
 
-/* Hover and active link styles */
-header nav ul li a,
-#nav-links-mobile-menu li a {
+header nav#nav-links-large-menu ul li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     display: inline-block;
     padding: 8px 16px;
@@ -305,16 +340,14 @@ header nav ul li a,
     transition: all 0.3s ease-in-out;
 }
 
-header nav ul li a:hover,
-#nav-links-mobile-menu li a:hover {
+header nav#nav-links-large-menu ul li a:hover {
     background-color: #A3E4C2; 
     border-color: #4F8766; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     text-decoration: none;
 }
 
-header nav ul li a.header-nav-active,
-#nav-links-mobile-menu li a.header-nav-active {
+header nav#nav-links-large-menu ul li a.header-nav-active {
     background-color: #5F9E89; 
     border-color: #4B9F7E; 
     color: #D0F5E4; 
@@ -490,8 +523,10 @@ footer  {
 /* Media query for larger screens */
 @media (min-width: 768px) {
     .container  {
+        margin: 0 auto;
         max-width: 1200px;
     }
+    
     header {
         flex-direction: row; /* Default layout for larger screens */
         justify-content: space-between; /* Space out the logo and hamburger */
@@ -516,7 +551,7 @@ footer  {
     }
 
     /* Display the large screen navigation */
-    #nav-links-large-menu {
+    header nav#nav-links-large-menu {
         display: flex;
         justify-content: space-between;
     }
